@@ -264,7 +264,7 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp B       &kp L       &kp D       &kp W       &kp Z           &dash_dquote &kp F      &kp O       &kp U       &kp J
-                &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm RSHFT H &rhm RGUI A &rhm RALT E &rhm RCTRL I
+                &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm LSHFT H &rhm LGUI A &rhm LALT E &rhm LCTRL I
     &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &apo_under
                                         &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_spc SYM BSPC &lt_spc NUM SPACE &lt_spc FUN LG(SPACE)
                 >;
@@ -314,7 +314,7 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &kp SQT     &kp LBRC    &kp RBRC    &kp DLLR    &arrow_morph
-                &lhm LCTRL EXCL &lhm LALT ASTRK &lhm LGUI PLUS &lhm LSHFT EQUAL &kp AMPS   &kp HASH    &rhm RSHFT LPAR &rhm RGUI RPAR &rhm RALT COLON &rhm RCTRL SEMI
+                &lhm LCTRL EXCL &lhm LALT ASTRK &lhm LGUI PLUS &lhm LSHFT EQUAL &kp AMPS   &kp HASH    &rhm LSHFT LPAR &rhm LGUI RPAR &rhm LALT COLON &rhm LCTRL SEMI
     &trans      &kp CARET   &none       &kp UNDER   &kp MINUS   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                 >;
