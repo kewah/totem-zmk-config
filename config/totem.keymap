@@ -58,8 +58,8 @@
             hold-trigger-on-release;
         };
 
-        // Hyper hold-tap for C and P keys
-        hyp: hyper_hold_tap {
+        // Hyper hold-tap for C key (left hand) - trigger only on right hand keys
+        hypl: hyper_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
@@ -67,6 +67,21 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             bindings = <&hyper_mods>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        // Hyper hold-tap for P key (right hand) - trigger only on left hand keys
+        hypr: hyper_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&hyper_mods>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
         };
 
         // Mod-morph: ' -> _ (apostrophe to underscore with shift)
@@ -250,7 +265,7 @@ label= "BASE"                              ;
 
                 &kp B       &kp L       &kp D       &kp W       &kp Z           &dash_dquote &kp F      &kp O       &kp U       &kp J
                 &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm RSHFT H &rhm RGUI A &rhm RALT E &rhm RCTRL I
-    &mouseless  &kp Q       &kp X       &kp M       &hyp 0 C    &kp V           &kp K       &hyp 0 P    &comma_qmark &dot_excl  &slash_bslash &apo_under
+    &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &apo_under
                                         &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_spc SYM BSPC &lt_spc NUM SPACE &lt_spc FUN LG(SPACE)
                 >;
         };
