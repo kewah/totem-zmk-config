@@ -136,9 +136,9 @@
         lt_spc: layer_tap_space {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <0>;
             bindings = <&mo>, <&kp>;
         };
 
@@ -166,6 +166,8 @@
         hyper_mods: hyper_mods {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
             bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>,
                        <&macro_pause_for_release>,
                        <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
