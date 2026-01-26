@@ -132,6 +132,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        // Mod-morph: BSPC -> DEL (backspace to delete with shift)
+        bspc_del: bspc_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         // Layer-tap for thumbs
         lt_spc: layer_tap_space {
             compatible = "zmk,behavior-hold-tap";
@@ -145,11 +153,11 @@
         // Layer-tap for backspace (quick-tap for fast repeat)
         lt_bspc: layer_tap_bspc {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
-            bindings = <&mo>, <&kp>;
+            bindings = <&mo>, <&bspc_del>;
         };
 
         // Hold-tap: Copy on tap, GUI on hold
@@ -278,7 +286,7 @@ label= "BASE"                              ;
                 &kp B       &kp L       &kp D       &kp W       &kp Z           &dash_dquote &kp F      &kp O       &kp U       &kp J
                 &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm LSHFT H &rhm LGUI A &rhm LALT E &rhm LCTRL I
     &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &apo_under
-                                        &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM BSPC &lt_spc NUM SPACE &lt_spc FUN LG(SPACE)
+                                        &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM &lt_spc NUM SPACE &lt_spc FUN LG(SPACE)
                 >;
         };
 

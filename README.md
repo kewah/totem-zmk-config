@@ -118,6 +118,7 @@ Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-confi
 | `./!` | `.` | `!` |
 | `/\` | `/` | `\` |
 | `=>` | `=>` | `->` |
+| `BSP` | Backspace | Delete |
 
 ### Combos (NAV layer)
 
