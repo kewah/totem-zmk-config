@@ -84,11 +84,19 @@
             hold-trigger-on-release;
         };
 
-        // Mod-morph: ' -> _ (apostrophe to underscore with shift)
-        apo_under: apostrophe_underscore {
+        // Mod-morph: ' -> " (apostrophe to double quote with shift)
+        apo_dquote: apostrophe_doublequote {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp UNDER>;
+            bindings = <&kp SQT>, <&kp DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Mod-morph: - -> _ (minus to underscore with shift)
+        dash_under: dash_underscore {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp UNDER>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -113,14 +121,6 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp BSLH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        // Mod-morph: - -> " (minus to double quote with shift)
-        dash_dquote: dash_doublequote {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp DQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -274,20 +274,20 @@
 label= "BASE"                              ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     B     ┃     L     ┃     D     ┃     W     ┃     Z     ┃   ┃    -/"    ┃     F     ┃     O     ┃     U     ┃     J     ┃
+//             ┃     B     ┃     L     ┃     D     ┃     W     ┃     Z     ┃   ┃    '/"    ┃     F     ┃     O     ┃     U     ┃     J     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃   N/CTL   ┃   R/ALT   ┃   T/GUI   ┃   S/SFT   ┃     G     ┃   ┃     Y     ┃   H/SFT   ┃   A/GUI   ┃   E/ALT   ┃   I/CTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    ML     ┃     Q     ┃     X     ┃     M     ┃   C/HYP   ┃     V     ┃   ┃     K     ┃   P/HYP   ┃    ,/?    ┃    ./!    ┃    /\     ┃    '/_    ┃
+// ┃    ML     ┃     Q     ┃     X     ┃     M     ┃   C/HYP   ┃     V     ┃   ┃     K     ┃   P/HYP   ┃    ,/?    ┃    ./!    ┃    /\     ┃    -/_    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃ ESC/MEDIA ┃  RET/NAV  ┃  TAB/SYM  ┃   ┃  BSP/SYM  ┃  SPC/NUM  ┃ ⌘SPC/FUN  ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp B       &kp L       &kp D       &kp W       &kp Z           &dash_dquote &kp F      &kp O       &kp U       &kp J
+                &kp B       &kp L       &kp D       &kp W       &kp Z           &apo_dquote &kp F       &kp O       &kp U       &kp J
                 &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm LSHFT H &rhm LGUI A &rhm LALT E &rhm LCTRL I
-    &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &apo_under
+    &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &dash_under
                                         &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM 0 &lt_spc NUM SPACE &lt_spc FUN LG(SPACE)
                 >;
         };
@@ -326,9 +326,9 @@ label= "SYM"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     `     ┃     ~     ┃     <     ┃     >     ┃     |     ┃   ┃     '     ┃     {     ┃     }     ┃     $     ┃   =>/->   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   !/CTL   ┃   */ALT   ┃   +/GUI   ┃   =/SFT   ┃     &     ┃   ┃     #     ┃   (/SFT   ┃   )/GUI   ┃   :/ALT   ┃   ;/CTL   ┃
+//             ┃   !/CTL   ┃   ?/ALT   ┃   +/GUI   ┃   =/SFT   ┃     &     ┃   ┃     #     ┃   (/SFT   ┃   )/GUI   ┃   :/ALT   ┃   ;/CTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     ^     ┃           ┃     _     ┃     -     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
+// ┃           ┃     ^     ┃     *     ┃     _     ┃     -     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃   ████    ┃   ┃   ████    ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -336,8 +336,8 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &kp SQT     &kp LBRC    &kp RBRC    &kp DLLR    &arrow_morph
-                &lhm LCTRL EXCL &lhm LALT ASTRK &lhm LGUI PLUS &lhm LSHFT EQUAL &kp AMPS   &kp HASH    &rhm LSHFT LPAR &rhm LGUI RPAR &rhm LALT COLON &rhm LCTRL SEMI
-    &trans      &kp CARET   &none       &kp UNDER   &kp MINUS   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
+                &lhm LCTRL EXCL &lhm LALT QMARK &lhm LGUI PLUS &lhm LSHFT EQUAL &kp AMPS   &kp HASH    &rhm LSHFT LPAR &rhm LGUI RPAR &rhm LALT COLON &rhm LCTRL SEMI
+    &trans      &kp CARET   &kp ASTRK   &kp UNDER   &kp MINUS   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                 >;
         };
