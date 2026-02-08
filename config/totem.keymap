@@ -179,6 +179,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&m_paste>;
         };
+
+        // Hold-tap: Cut on tap, Alt on hold
+        ht_cut: hold_tap_cut {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&m_cut>;
+        };
     };
 
     macros {
@@ -228,6 +237,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(V)>;
+        };
+
+        // Cut (Cmd+X)
+        m_cut: m_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X)>;
         };
 
         // Browser back (Cmd+[)
@@ -301,7 +317,7 @@ label= "NAV"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃           ┃           ┃           ┃    ⌘`     ┃           ┃   ┃           ┃     {     ┃     }     ┃           ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   CTRL    ┃    ALT    ┃   ⌘C/GUI  ┃   ⌘V/SFT  ┃           ┃   ┃     ←     ┃     ↓     ┃     ↑     ┃     →     ┃           ┃
+//             ┃   CTRL    ┃   ⌘X/ALT  ┃   ⌘C/GUI  ┃   ⌘V/SFT  ┃           ┃   ┃     ←     ┃     ↓     ┃     ↑     ┃     →     ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃           ┃    ⌘[     ┃    ⌘]     ┃           ┃   ┃   HOME    ┃   PG DN   ┃   PG UP   ┃    END    ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -311,7 +327,7 @@ label= "NAV"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &none       &none       &none       &kp LG(GRAVE) &none         &none       &kp RBRC    &kp LBRC    &none       &none
-                &kp LCTRL   &kp LALT    &ht_copy LGUI 0 &ht_paste LSHFT 0 &none   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+                &kp LCTRL   &ht_cut LALT 0 &ht_copy LGUI 0 &ht_paste LSHFT 0 &none   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
     &trans      &none       &none       &m_back     &m_fwd      &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none       &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                 >;
