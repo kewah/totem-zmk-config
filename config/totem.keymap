@@ -342,9 +342,9 @@ label= "SYM"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     `     ┃     ~     ┃     <     ┃     >     ┃     |     ┃   ┃     '     ┃     {     ┃     }     ┃     $     ┃   =>/->   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   !/CTL   ┃   ?/ALT   ┃   +/GUI   ┃   =/SFT   ┃     &     ┃   ┃     #     ┃   (/SFT   ┃   )/GUI   ┃   :/ALT   ┃   ;/CTL   ┃
+//             ┃   !/CTL   ┃   ?/ALT   ┃   -/GUI   ┃   _/SFT   ┃     &     ┃   ┃     #     ┃   (/SFT   ┃   )/GUI   ┃   :/ALT   ┃   ;/CTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     ^     ┃     *     ┃     _     ┃     -     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
+// ┃           ┃     ^     ┃     *     ┃     +     ┃     =     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃           ┃           ┃   ████    ┃   ┃   ████    ┃           ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -352,8 +352,8 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &kp SQT     &kp LBRC    &kp RBRC    &kp DLLR    &arrow_morph
-                &lhm LCTRL EXCL &lhm LALT QMARK &lhm LGUI PLUS &lhm LSHFT EQUAL &kp AMPS   &kp HASH    &rhm LSHFT LPAR &rhm LGUI RPAR &rhm LALT COLON &rhm LCTRL SEMI
-    &trans      &kp CARET   &kp ASTRK   &kp UNDER   &kp MINUS   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
+                &lhm LCTRL EXCL &lhm LALT QMARK &lhm LGUI MINUS &lhm LSHFT UNDER &kp AMPS   &kp HASH    &rhm LSHFT LPAR &rhm LGUI RPAR &rhm LALT COLON &rhm LCTRL SEMI
+    &trans      &kp CARET   &kp ASTRK   &kp PLUS    &kp EQUAL   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                 >;
         };
