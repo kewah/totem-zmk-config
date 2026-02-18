@@ -303,7 +303,7 @@ label= "BASE"                              ;
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃    ML     ┃     Q     ┃     X     ┃     M     ┃   C/HYP   ┃     V     ┃   ┃     K     ┃   P/HYP   ┃    ,/?    ┃    ./!    ┃    /\     ┃    -/_    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃ ESC/MEDIA ┃  RET/NAV  ┃  TAB/SYM  ┃   ┃  BSP/SYM  ┃  SPC/NUM  ┃ ⌘SPC/FUN  ┃
+//                                     ┃ ESC/MEDIA ┃  RET/NAV  ┃  TAB/SYM  ┃   ┃  BSP/SYM  ┃  SPC/NUM  ┃ ^SPC/FUN  ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
@@ -311,7 +311,7 @@ label= "BASE"                              ;
                 &kp B       &kp L       &kp D       &kp W       &kp Z           &apo_dquote &kp F       &kp O       &kp U       &kp J
                 &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm LSHFT H &rhm LGUI A &rhm LALT E &rhm LCTRL I
     &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &dash_under
-                                        &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM 0 &lt_spc NUM SPACE &lt_spc FUN LG(SPACE)
+                                        &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM 0 &lt_spc NUM SPACE &lt_spc FUN LC(SPACE)
                 >;
         };
 
