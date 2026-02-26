@@ -349,7 +349,7 @@ label= "SYM"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     `     ┃     ~     ┃     <     ┃     >     ┃     |     ┃   ┃     '     ┃     {     ┃     }     ┃     $     ┃   =>/->   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   !/CTL   ┃   ?/ALT   ┃   -/GUI   ┃   _/SFT   ┃     &     ┃   ┃     #     ┃  (/RSFT   ┃   )/GUI   ┃  :/RALT   ┃  ;/RCTL   ┃
+//             ┃   -/CTL   ┃   _/ALT   ┃   !/GUI   ┃   ?/SFT   ┃     &     ┃   ┃     #     ┃  (/RSFT   ┃   )/GUI   ┃  :/RALT   ┃  ;/RCTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃     ^     ┃     *     ┃     +     ┃     =     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -359,7 +359,7 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &kp SQT     &kp LBRC    &kp RBRC    &kp DLLR    &arrow_morph
-                &lhm LCTRL EXCL &lhm LALT QMARK &lhm LGUI MINUS &lhm LSHFT UNDER &kp AMPS   &kp HASH    &rhm RSHFT LPAR &rhm LGUI RPAR &rhm RALT COLON &rhm RCTRL SEMI
+                &lhm LCTRL MINUS &lhm LALT UNDER &lhm LGUI EXCL &lhm LSHFT QMARK &kp AMPS   &kp HASH    &rhm RSHFT LPAR &rhm LGUI RPAR &rhm RALT COLON &rhm RCTRL SEMI
     &trans      &kp CARET   &kp ASTRK   &kp PLUS    &kp EQUAL   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                 >;
