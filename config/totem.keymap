@@ -299,7 +299,7 @@ label= "BASE"                              ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     B     ┃     L     ┃     D     ┃     W     ┃     Z     ┃   ┃    '/"    ┃     F     ┃     O     ┃     U     ┃     J     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   N/CTL   ┃   R/ALT   ┃   T/GUI   ┃   S/SFT   ┃     G     ┃   ┃     Y     ┃   H/SFT   ┃   A/GUI   ┃   E/ALT   ┃   I/CTL   ┃
+//             ┃   N/CTL   ┃   R/ALT   ┃   T/GUI   ┃   S/SFT   ┃     G     ┃   ┃     Y     ┃  H/RSFT   ┃   A/GUI   ┃  E/RALT   ┃  I/RCTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃    ML     ┃     Q     ┃     X     ┃     M     ┃   C/HYP   ┃     V     ┃   ┃     K     ┃   P/HYP   ┃    ,/?    ┃    ./!    ┃    /\     ┃    -/_    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -309,7 +309,7 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp B       &kp L       &kp D       &kp W       &kp Z           &apo_dquote &kp F       &kp O       &kp U       &kp J
-                &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm LSHFT H &rhm LGUI A &rhm LALT E &rhm LCTRL I
+                &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm RSHFT H &rhm LGUI A &rhm RALT E &rhm RCTRL I
     &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &dash_under
                                         &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM 0 &lt_spc NUM SPACE &lt_spc FUN LC(SPACE)
                 >;
@@ -349,7 +349,7 @@ label= "SYM"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     `     ┃     ~     ┃     <     ┃     >     ┃     |     ┃   ┃     '     ┃     {     ┃     }     ┃     $     ┃   =>/->   ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   !/CTL   ┃   ?/ALT   ┃   -/GUI   ┃   _/SFT   ┃     &     ┃   ┃     #     ┃   (/SFT   ┃   )/GUI   ┃   :/ALT   ┃   ;/CTL   ┃
+//             ┃   !/CTL   ┃   ?/ALT   ┃   -/GUI   ┃   _/SFT   ┃     &     ┃   ┃     #     ┃  (/RSFT   ┃   )/GUI   ┃  :/RALT   ┃  ;/RCTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃     ^     ┃     *     ┃     +     ┃     =     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -359,7 +359,7 @@ label= "SYM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &kp SQT     &kp LBRC    &kp RBRC    &kp DLLR    &arrow_morph
-                &lhm LCTRL EXCL &lhm LALT QMARK &lhm LGUI MINUS &lhm LSHFT UNDER &kp AMPS   &kp HASH    &rhm LSHFT LPAR &rhm LGUI RPAR &rhm LALT COLON &rhm LCTRL SEMI
+                &lhm LCTRL EXCL &lhm LALT QMARK &lhm LGUI MINUS &lhm LSHFT UNDER &kp AMPS   &kp HASH    &rhm RSHFT LPAR &rhm LGUI RPAR &rhm RALT COLON &rhm RCTRL SEMI
     &trans      &kp CARET   &kp ASTRK   &kp PLUS    &kp EQUAL   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                 >;
@@ -374,7 +374,7 @@ label= "NUM"                               ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     /     ┃     7     ┃     8     ┃     9     ┃     *     ┃   ┃           ┃           ┃           ┃           ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃     -     ┃     1     ┃     2     ┃     3     ┃     +     ┃   ┃           ┃   SHIFT   ┃    GUI    ┃    ALT    ┃   CTRL    ┃
+//             ┃     -     ┃     1     ┃     2     ┃     3     ┃     +     ┃   ┃           ┃   RSHFT   ┃    GUI    ┃   RALT    ┃   RCTRL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃     .     ┃     4     ┃     5     ┃     6     ┃     %     ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -384,7 +384,7 @@ label= "NUM"                               ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp FSLH    &kp N7      &kp N8      &kp N9      &kp ASTRK       &none       &none       &none       &none       &none
-                &kp MINUS   &kp N1      &kp N2      &kp N3      &kp PLUS        &none       &kp LSHFT   &kp LGUI    &kp LALT    &kp LCTRL
+                &kp MINUS   &kp N1      &kp N2      &kp N3      &kp PLUS        &none       &kp RSHFT   &kp LGUI    &kp RALT    &kp RCTRL
     &trans      &kp DOT     &kp N4      &kp N5      &kp N6      &kp PRCNT       &none       &none       &none       &none       &none       &trans
                                         &kp COLON   &kp N0      &kp EQUAL       &trans      &trans      &trans
                 >;
