@@ -58,7 +58,7 @@
             hold-trigger-on-release;
         };
 
-        // Hyper hold-tap for C key (left hand) - trigger only on right hand keys
+        // Hyper hold-tap for S key (left hand) - trigger only on right hand keys
         hypl: hyper_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -71,7 +71,7 @@
             hold-trigger-on-release;
         };
 
-        // Hyper hold-tap for P key (right hand) - trigger only on left hand keys
+        // Hyper hold-tap for H key (right hand) - trigger only on left hand keys
         hypr: hyper_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -132,12 +132,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // Mod-morph: BSPC -> DEL (backspace to delete with shift)
-        bspc_del: bspc_delete {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp DEL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+        // Mod-tap: Shift on hold, Backspace on tap (thumb key)
+        mt_bspc: mod_tap_bspc {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
         };
 
         // Layer-tap for thumbs
@@ -151,43 +153,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // Layer-tap for backspace (quick-tap for fast repeat)
-        lt_bspc: layer_tap_bspc {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            bindings = <&mo>, <&bspc_del>;
-        };
-
-        // Hold-tap: Copy on tap, GUI on hold
-        ht_copy: hold_tap_copy {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&m_copy>;
-        };
-
-        // Hold-tap: Paste on tap, Shift on hold
-        ht_paste: hold_tap_paste {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&m_paste>;
-        };
-
-        // Hold-tap: Cut on tap, Alt on hold
-        ht_cut: hold_tap_cut {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&kp>, <&m_cut>;
-        };
     };
 
     macros {
@@ -299,19 +264,19 @@ label= "BASE"                              ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃     B     ┃     L     ┃     D     ┃     W     ┃     Z     ┃   ┃    '/"    ┃     F     ┃     O     ┃     U     ┃     J     ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   N/CTL   ┃   R/ALT   ┃   T/GUI   ┃   S/SFT   ┃     G     ┃   ┃     Y     ┃  H/RSFT   ┃   A/GUI   ┃  E/RALT   ┃  I/RCTL   ┃
+//             ┃   N/CTL   ┃   R/ALT   ┃   T/GUI   ┃   S/HYP   ┃     G     ┃   ┃     Y     ┃   H/HYP   ┃   A/GUI   ┃  E/RALT   ┃  I/RCTL   ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃    ML     ┃     Q     ┃     X     ┃     M     ┃   C/HYP   ┃     V     ┃   ┃     K     ┃   P/HYP   ┃    ,/?    ┃    ./!    ┃    /\     ┃    -/_    ┃
+// ┃    ML     ┃     Q     ┃     X     ┃     M     ┃     C     ┃     V     ┃   ┃     K     ┃     P     ┃    ,/?    ┃    ./!    ┃    /\     ┃    -/_    ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃ ESC/MEDIA ┃  RET/NAV  ┃  TAB/SYM  ┃   ┃  BSP/SYM  ┃  SPC/NUM  ┃ ^SPC/FUN  ┃
+//                                     ┃ ESC/MEDIA ┃  RET/NAV  ┃  TAB/SYM  ┃   ┃ BSP/LSFT  ┃  SPC/NUM  ┃ ^SPC/FUN  ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp B       &kp L       &kp D       &kp W       &kp Z           &apo_dquote &kp F       &kp O       &kp U       &kp J
-                &lhm LCTRL N &lhm LALT R &lhm LGUI T &lhm LSHFT S &kp G         &kp Y       &rhm RSHFT H &rhm LGUI A &rhm RALT E &rhm RCTRL I
-    &mouseless  &kp Q       &kp X       &kp M       &hypl 0 C   &kp V           &kp K       &hypr 0 P   &comma_qmark &dot_excl  &slash_bslash &dash_under
-                                        &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &lt_bspc SYM 0 &lt_spc NUM SPACE &lt_spc FUN LC(SPACE)
+                &lhm LCTRL N &lhm LALT R &lhm LGUI T &hypl 0 S   &kp G           &kp Y       &hypr 0 H   &rhm LGUI A &rhm RALT E &rhm RCTRL I
+    &mouseless  &kp Q       &kp X       &kp M       &kp C       &kp V           &kp K       &kp P       &comma_qmark &dot_excl  &slash_bslash &dash_under
+                                        &lt_spc MEDIA ESC &lt_spc NAV RET &lt_spc SYM TAB  &mt_bspc LSHFT BSPC &lt_spc NUM SPACE &lt_spc FUN LC(SPACE)
                 >;
         };
 
@@ -322,21 +287,21 @@ label= "BASE"                              ;
 label= "NAV"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃           ┃           ┃           ┃    ⌘`     ┃           ┃   ┃           ┃     {     ┃     }     ┃           ┃           ┃
+//             ┃           ┃    ⌘X     ┃    ⌘C     ┃    ⌘V     ┃           ┃   ┃           ┃     {     ┃     }     ┃           ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   CTRL    ┃   ⌘X/ALT  ┃   ⌘C/GUI  ┃   ⌘V/SFT  ┃           ┃   ┃     ←     ┃     ↓     ┃     ↑     ┃     →     ┃           ┃
+//             ┃   CTRL    ┃    ALT    ┃    GUI    ┃   SHIFT   ┃    ⌘`     ┃   ┃     ←     ┃     ↓     ┃     ↑     ┃     →     ┃           ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
 // ┃           ┃           ┃    ⌘R     ┃    ⌘[     ┃    ⌘]     ┃           ┃   ┃   HOME    ┃   PG DN   ┃   PG UP   ┃    END    ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃   ████    ┃           ┃   ┃           ┃           ┃           ┃
+//                                     ┃           ┃   ████    ┃           ┃   ┃    DEL    ┃   SPACE   ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &none       &none       &none       &kp LG(GRAVE) &none         &none       &kp RBRC    &kp LBRC    &none       &none
-                &kp LCTRL   &ht_cut LALT 0 &ht_copy LGUI 0 &ht_paste LSHFT 0 &none   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
+                &none       &m_cut      &m_copy     &m_paste    &none           &none       &kp RBRC    &kp LBRC    &none       &none
+                &kp LCTRL   &kp LALT    &kp LGUI    &kp LSHFT   &kp LG(GRAVE)   &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &none
     &trans      &none       &m_refresh  &m_back     &m_fwd      &none           &kp HOME    &kp PG_DN   &kp PG_UP   &kp END     &none       &trans
-                                        &trans      &trans      &trans          &trans      &trans      &trans
+                                        &trans      &trans      &trans          &kp DEL     &kp SPACE   &trans
                 >;
         };
 
@@ -347,21 +312,21 @@ label= "NAV"                               ;
 label= "SYM"                               ;
 // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-//             ┃     `     ┃     ~     ┃     <     ┃     >     ┃     |     ┃   ┃     '     ┃     {     ┃     }     ┃     $     ┃   =>/->   ┃
+//             ┃     `     ┃     ~     ┃     <     ┃     >     ┃     |     ┃   ┃           ┃     {     ┃     }     ┃     $     ┃           ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃   -/CTL   ┃   _/ALT   ┃   !/GUI   ┃   ?/SFT   ┃     &     ┃   ┃     #     ┃  (/RSFT   ┃   )/GUI   ┃  :/RALT   ┃  ;/RCTL   ┃
+//             ┃     -     ┃     _     ┃     !     ┃     ?     ┃     &     ┃   ┃           ┃     (     ┃     )     ┃     @     ┃     #     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃           ┃     ^     ┃     *     ┃     +     ┃     =     ┃     %     ┃   ┃     @     ┃     [     ┃     ]     ┃           ┃           ┃           ┃
+// ┃           ┃     ^     ┃     *     ┃     +     ┃     =     ┃     %     ┃   ┃           ┃     [     ┃     ]     ┃           ┃           ┃           ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃           ┃           ┃   ████    ┃   ┃   ████    ┃           ┃           ┃
+//                                     ┃           ┃           ┃   ████    ┃   ┃     :     ┃     ;     ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
-                &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &kp SQT     &kp LBRC    &kp RBRC    &kp DLLR    &arrow_morph
-                &lhm LCTRL MINUS &lhm LALT UNDER &lhm LGUI EXCL &lhm LSHFT QMARK &kp AMPS   &kp HASH    &rhm RSHFT LPAR &rhm LGUI RPAR &rhm RALT COLON &rhm RCTRL SEMI
-    &trans      &kp CARET   &kp ASTRK   &kp PLUS    &kp EQUAL   &kp PRCNT       &kp AT      &kp LBKT    &kp RBKT    &none       &none       &trans
-                                        &trans      &trans      &trans          &trans      &trans      &trans
+                &kp GRAVE   &kp TILDE   &kp LT      &kp GT      &kp PIPE        &none       &kp LBRC    &kp RBRC    &kp DLLR    &none
+                &kp MINUS   &kp UNDER   &kp EXCL    &kp QMARK   &kp AMPS        &none       &kp LPAR    &kp RPAR    &kp AT      &kp HASH
+    &trans      &kp CARET   &kp ASTRK   &kp PLUS    &kp EQUAL   &kp PRCNT       &none       &kp LBKT    &kp RBKT    &none       &none       &trans
+                                        &trans      &trans      &trans          &kp COLON   &kp SEMI    &trans
                 >;
         };
 

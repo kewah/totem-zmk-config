@@ -11,7 +11,7 @@ Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-confi
 | Layer | Hold Key |
 |-------|----------|
 | NAV | RET |
-| SYM | TAB or BSP |
+| SYM | TAB |
 | NUM | SPC |
 | MEDIA | ESC |
 | FUN | G-SPC |
@@ -22,11 +22,11 @@ Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-confi
          ┌─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┐
          │  B  │  L  │  D  │  W  │  Z  │   │ '/" │  F  │  O  │  U  │  J  │
          ├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-         │N/CTL│R/ALT│T/GUI│S/SFT│  G  │   │  Y  │H/SFT│A/GUI│E/ALT│I/CTL│
+         │N/CTL│R/ALT│T/GUI│S/HYP│  G  │   │  Y  │H/HYP│A/GUI│E/ALT│I/CTL│
    ┌─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┐
-   │ ML  │  Q  │  X  │  M  │C/HYP│  V  │   │  K  │P/HYP│ ,/? │ ./! │ /\  │ -/_ │
+   │ ML  │  Q  │  X  │  M  │  C  │  V  │   │  K  │  P  │ ,/? │ ./! │ /\  │ -/_ │
    └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                     │ESC/M│RET/N│TAB/S│   │BSP/S│SPC/N│G-SPC│
+                     │ESC/M│RET/N│TAB/S│   │BSP/⇧│SPC/N│G-SPC│
                      └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
@@ -34,27 +34,27 @@ Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-confi
 
 ```
          ┌─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┐
-         │     │     │     │ G-` │     │   │     │  }  │  {  │     │     │
+         │     │ G-X │ G-C │ G-V │     │   │     │  }  │  {  │     │     │
          ├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-         │CTRL │ ALT │G-C/G│G-V/S│     │   │  ←  │  ↓  │  ↑  │  →  │     │
+         │CTRL │ ALT │ GUI │SHIFT│ G-` │   │  ←  │  ↓  │  ↑  │  →  │     │
    ┌─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┐
-   │     │     │     │ G-[ │ G-] │     │   │HOME │PG DN│PG UP│ END │     │     │
+   │     │     │ G-R │ G-[ │ G-] │     │   │HOME │PG DN│PG UP│ END │     │     │
    └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                     │     │ ### │     │   │     │     │     │
+                     │     │ ### │     │   │ DEL │SPACE│     │
                      └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
-### SYM (TAB/BSP hold)
+### SYM (TAB hold)
 
 ```
          ┌─────┬─────┬─────┬─────┬─────┐   ┌─────┬─────┬─────┬─────┬─────┐
-         │  `  │  ~  │  <  │  >  │  |  │   │  '  │  {  │  }  │  $  │ =>  │
+         │  `  │  ~  │  <  │  >  │  |  │   │     │  {  │  }  │  $  │     │
          ├─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┤
-         │!/CTL│?/ALT│-/GUI│_/SFT│  &  │   │  #  │(/SFT│)/GUI│:/ALT│;/CTL│
+         │  -  │  _  │  !  │  ?  │  &  │   │     │  (  │  )  │  @  │  #  │
    ┌─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┐
-   │     │  ^  │  *  │  +  │  =  │  %  │   │  @  │  [  │  ]  │     │     │     │
+   │     │  ^  │  *  │  +  │  =  │  %  │   │     │  [  │  ]  │     │     │     │
    └─────┴─────┴─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┴─────┴─────┘
-                     │     │     │ ### │   │ ### │     │     │
+                     │     │     │ ### │   │  :  │  ;  │     │
                      └─────┴─────┴─────┘   └─────┴─────┴─────┘
 ```
 
@@ -104,6 +104,7 @@ Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-confi
 
 - `X/Y` = tap X, hold Y
 - `HYP` = Hyper (Ctrl+Alt+Gui+Shift)
+- `⇧` = Shift
 - `ML` = Mouseless (Hyper+Enter)
 - `G-` = Gui/Cmd modifier
 - `###` = layer activation key
@@ -117,8 +118,6 @@ Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-confi
 | `,/?` | `,` | `?` |
 | `./!` | `.` | `!` |
 | `/\` | `/` | `\` |
-| `=>` | `=>` | `->` |
-| `BSP` | Backspace | Delete |
 
 ### Combos (NAV layer)
 
