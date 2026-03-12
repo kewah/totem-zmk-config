@@ -4,135 +4,185 @@ Personal ZMK firmware configuration for the [Totem](https://github.com/GEIGEIGEI
 
 Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-config-totem).
 
-## Layers
+Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum#readme).
 
-### Layer Access
+## Layout Notes
 
-| Layer | Hold Key |
-|-------|----------|
-| NAV | RET |
-| SYM | T or A |
-| NUM | SPC |
-| MEDIA | ESC |
-| FUN | G-SPC |
+- Base layer uses Graphite.
+- The two isolated outer keys are intentionally unused.
+- The layer diagrams omit those two unused outer keys.
+- `Mod/Ext` is the main layer key:
+  - tap = sticky `MOD`
+  - hold = `EXT`
+- `MF` is a momentary thumb-chord layer:
+  - hold both middle thumbs = `MF`
+- `MOD` keys are hybrid modifiers:
+  - tap = sticky mod
+  - hold = normal held mod
 
-### BASE (Graphite)
+## Layer Access
 
-```
-        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓   ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-        ┃   B   ┃   L   ┃   D   ┃   W   ┃   Z   ┃   ┃  '/"  ┃   F   ┃   O   ┃   U   ┃   J   ┃
-        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-        ┃ N/CTL ┃ R/ALT ┃ T/SYM ┃ S/HYP ┃   G   ┃   ┃   Y   ┃ H/HYP ┃ A/SYM ┃E/RALT ┃ I/RCTL┃
-┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-┃  ML   ┃   Q   ┃   X   ┃   M   ┃   C   ┃   V   ┃   ┃   K   ┃   P   ┃ ,/?   ┃ ./!   ┃  /\   ┃ -/_   ┃
-┗━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┛
-                        ┃ESC/MD ┃RET/NAV┃TAB/GUI┃   ┃BSP/SFT┃SPC/NUM┃^SPC/FN┃
-                        ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛   ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
-```
+| Layer | Access                  |
+| ----- | ----------------------- |
+| MOD   | tap `Mod/Ext`           |
+| EXT   | hold `Mod/Ext`          |
+| SYM   | hold `Bspc/Sym`         |
+| NUM   | hold `Space/Num`        |
+| MF    | hold both middle thumbs |
 
-### NAV (RET hold)
+## BASE (Graphite)
 
-```
-        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓   ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-        ┃       ┃  ⌘X   ┃  ⌘C   ┃  ⌘V   ┃       ┃   ┃       ┃   {   ┃   }   ┃       ┃       ┃
-        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-        ┃ CTRL  ┃  ALT  ┃  GUI  ┃SHIFT  ┃  ⌘`   ┃   ┃   ←   ┃   ↓   ┃   ↑   ┃   →   ┃       ┃
-┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-┃       ┃       ┃  ⌘R   ┃  ⌘[   ┃  ⌘]   ┃       ┃   ┃ HOME  ┃PG DN  ┃PG UP  ┃ END   ┃       ┃       ┃
-┗━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┛
-                        ┃       ┃ ████  ┃       ┃   ┃ DEL   ┃  TAB  ┃       ┃
-                        ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛   ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
-```
+Left half
 
-### SYM (T or A hold)
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    | `B`   | `L`   | `D`   | `W`   | `Z`   |
+| Home   | `N`   | `R`   | `T`   | `S`   | `G`   |
+| Bottom | `Q`   | `X`   | `M`   | `C`   | `V`   |
 
-```
-        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓   ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-        ┃   `   ┃   ~   ┃   <   ┃   >   ┃   |   ┃   ┃       ┃   {   ┃   }   ┃   $   ┃       ┃
-        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-        ┃-/CTL  ┃_/ALT  ┃   !   ┃   ?   ┃   &   ┃   ┃       ┃   (   ┃   )   ┃@/ALT  ┃#/CTL  ┃
-┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-┃       ┃   ^   ┃   *   ┃   +   ┃   =   ┃   %   ┃   ┃       ┃   [   ┃   ]   ┃       ┃       ┃       ┃
-┗━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┛
-                        ┃       ┃       ┃  GUI  ┃   ┃LSHFT  ┃   ;   ┃   :   ┃
-                        ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛   ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
-```
+Right half
 
-### NUM (SPC hold)
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    | `'/"` | `F`   | `O`   | `U`   | `J`   |
+| Home   | `Y`   | `H`   | `A`   | `E`   | `I`   |
+| Bottom | `K`   | `P`   | `,`   | `.`   | `/`   |
 
-```
-        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓   ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-        ┃   /   ┃   7   ┃   8   ┃   9   ┃   %   ┃   ┃       ┃       ┃       ┃       ┃       ┃
-        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-        ┃   -   ┃   1   ┃   2   ┃   3   ┃   +   ┃   ┃       ┃./RSHFT┃,/GUI  ┃ RALT  ┃ RCTRL ┃
-┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-┃       ┃   x   ┃   4   ┃   5   ┃   6   ┃   *   ┃   ┃       ┃       ┃       ┃       ┃       ┃       ┃
-┗━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┛
-                        ┃   :   ┃   0   ┃   =   ┃   ┃       ┃ ████  ┃       ┃
-                        ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛   ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
-```
+Thumbs
 
-### MEDIA (ESC hold)
+| Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
+| ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
+| `RET`      | `MOD/EXT`   | `CMD`      | `BSP/SYM`   | `SPC/NUM`    | `SHIFT`     |
 
-```
-        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓   ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-        ┃       ┃ MUTE  ┃ VOL-  ┃ VOL+  ┃       ┃   ┃       ┃       ┃       ┃       ┃       ┃
-        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-        ┃ STOP  ┃ PLAY  ┃ PREV  ┃ NEXT  ┃       ┃   ┃       ┃       ┃       ┃       ┃       ┃
-┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-┃       ┃       ┃       ┃ BRI-  ┃ BRI+  ┃       ┃   ┃       ┃       ┃       ┃       ┃       ┃       ┃
-┗━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┛
-                        ┃ ████  ┃       ┃       ┃   ┃       ┃       ┃       ┃
-                        ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛   ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
-```
+## MOD (tap `Mod/Ext`)
 
-### FUN (G-SPC hold)
+Left half
 
-```
-        ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓   ┏━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━┓
-        ┃ F12   ┃  F7   ┃  F8   ┃  F9   ┃       ┃   ┃       ┃       ┃       ┃       ┃       ┃
-        ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫
-        ┃ F10   ┃  F1   ┃  F2   ┃  F3   ┃       ┃   ┃       ┃       ┃       ┃       ┃       ┃
-┏━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┓
-┃       ┃ F11   ┃  F4   ┃  F5   ┃  F6   ┃       ┃   ┃BT CLR ┃ BT 0  ┃ BT 1  ┃ BT 2  ┃ BT 3  ┃ BT 4  ┃
-┗━━━━━━━┻━━━━━━━┻━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┫   ┣━━━━━━━╋━━━━━━━╋━━━━━━━╋━━━━━━━┻━━━━━━━┻━━━━━━━┛
-                        ┃       ┃       ┃       ┃   ┃       ┃       ┃ ████  ┃
-                        ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛   ┗━━━━━━━┻━━━━━━━┻━━━━━━━┛
-```
+| Row    | Col 1    | Col 2  | Col 3   | Col 4  | Col 5  |
+| ------ | -------- | ------ | ------- | ------ | ------ |
+| Top    |          |        |         |        |        |
+| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `CMD*` | `HYP*` |
+| Bottom |          |        |         |        |        |
+
+Right half
+
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    |       |       |       |       |       |
+| Home   |       |       |       |       |       |
+| Bottom |       |       |       |       |       |
+
+## EXT (hold `Mod/Ext`)
+
+Left half
+
+| Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
+| ------ | ------- | ----- | ------ | ----- | ----- |
+| Top    | `ESC`   |       |        |       |       |
+| Home   | `SHIFT` | `ALT` | `CTRL` | `CMD` |       |
+| Bottom |         |       |        |       |       |
+
+Right half
+
+| Row    | Col 1  | Col 2  | Col 3 | Col 4   | Col 5  |
+| ------ | ------ | ------ | ----- | ------- | ------ |
+| Top    |        | `HOME` | `END` |         | `PGUP` |
+| Home   | `LEFT` | `DOWN` | `UP`  | `RIGHT` |        |
+| Bottom |        | `TAB`  |       |         | `PGDN` |
+
+Thumbs
+
+| Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
+| ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
+|            | `EXT`       |            | `DEL`       | `SPC`        |             |
+
+## SYM (hold `Bspc/Sym`)
+
+Left half
+
+| Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
+| ------ | ------- | ----- | ------ | ----- | ----- |
+| Top    | `` ` `` | `~`   | `@`    | `#`   | `$`   |
+| Home   | `SHIFT` | `ALT` | `CTRL` | `CMD` | `HYP` |
+| Bottom | `^`     | `&`   | `!`    | `?`   | `\|`  |
+
+Right half
+
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    |       | `/`   | `:`   | `;`   | `\`   |
+| Home   | `<`   | `(`   | `{`   | `[`   | `-`   |
+| Bottom | `>`   | `)`   | `}`   | `]`   | `_`   |
+
+Thumbs
+
+| Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
+| ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
+|            |             |            | `SYM`       |              |             |
+
+## NUM (hold `Space/Num`)
+
+Left half
+
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    | `/`   | `7`   | `8`   | `9`   | `%`   |
+| Home   | `-`   | `1`   | `2`   | `3`   | `+`   |
+| Bottom | `x`   | `4`   | `5`   | `6`   | `*`   |
+
+Right half
+
+| Row    | Col 1 | Col 2 | Col 3  | Col 4 | Col 5   |
+| ------ | ----- | ----- | ------ | ----- | ------- |
+| Top    |       |       |        |       |         |
+| Home   | `HYP` | `CMD` | `CTRL` | `ALT` | `SHIFT` |
+| Bottom |       |       |        |       |         |
+
+Thumbs
+
+| Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
+| ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
+| `:`        | `0`         | `=`        |             | `NUM`        |             |
+
+## MF (hold both middle thumbs)
+
+Left half
+
+| Row    | Col 1  | Col 2        | Col 3  | Col 4  | Col 5 |
+| ------ | ------ | ------------ | ------ | ------ | ----- |
+| Top    |        | `MUTE`       | `VOL-` | `VOL+` |       |
+| Home   | `STOP` | `PLAY/PAUSE` | `PREV` | `NEXT` |       |
+| Bottom |        |              | `BRI-` | `BRI+` |       |
+
+Right half
+
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    | `F12` | `F7`  | `F8`  | `F9`  |       |
+| Home   | `F10` | `F1`  | `F2`  | `F3`  |       |
+| Bottom | `F11` | `F4`  | `F5`  | `F6`  |       |
 
 ## Legend
 
-- `X/Y` = tap X, hold Y
-- `HYP` = Hyper (Ctrl+Alt+Gui+Shift)
-- `ML` = Mouseless (Hyper+Enter)
-- `G-` = Gui/Cmd modifier
-- `ESC/MD` = tap `Esc`, hold `MEDIA`
-- `RET/NV` = tap `Return`, hold `NAV`
-- `TAB/GUI` = tap `Tab`, hold `LGUI`/Command
-- `BSP/SFT` = tap `Backspace`, hold `LSHFT`
-- `^SPC/FN` = tap `Ctrl+Space`, hold `FUN`
-- `-/CTL` = tap `-`, hold `LCTRL` on SYM
-- `_/ALT` = tap `_`, hold `LALT` on SYM
-- `@/ALT` = tap `@`, hold `RALT` on SYM
-- `#/CTL` = tap `#`, hold `RCTRL` on SYM
-- `./RSHF` = tap `.`, hold `RSHFT`
-- `,/GUI` = tap `,`, hold `LGUI`/Command
-- `RALT` and `RCTL` in NUM remain right-side modifiers on hold
-- `###` = layer activation key
+- `X/Y` = tap `X`, hold `Y`
+- `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
+  - tap = sticky modifier
+  - hold = normal held modifier
+- `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
+- Outer isolated keys are unused
 
-### Morphs (shift behavior)
+## Special Base Key
 
-| Key | Tap | Shift |
-|-----|-----|-------|
-| `'/"` | `'` | `"` |
-| `-/_` | `-` | `_` |
-| `,/?` | `,` | `?` |
-| `./!` | `.` | `!` |
-| `/\` | `/` | `\` |
+This layout has one custom base-layer key behavior:
 
-### Combos (NAV layer)
+- the top-right first key sends `'` normally
+- if you hold `SHIFT`, that same key sends `"`
 
-| Keys | Output |
-|------|--------|
-| H+A | Opt+Left (word left) |
-| A+E | Opt+Right (word right) |
+In the tables above, that key is shown as `'/"`.
+
+## Combos (EXT layer)
+
+| Keys | Output                 |
+| ---- | ---------------------- |
+| H+A  | Opt+Left (word left)   |
+| A+E  | Opt+Right (word right) |
