@@ -9,6 +9,8 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
 #define MOD  1
@@ -16,6 +18,7 @@
 #define SYM  3
 #define NUM  4
 #define MF   5
+#define BT   6
 
 #define HYPER_MOD LG(LS(LA(LCTRL)))
 
@@ -82,6 +85,12 @@
             bindings = <&mo MF>;
         };
 
+        combo_bt_outer_thumbs {
+            timeout-ms = <60>;
+            key-positions = <32 37>;
+            bindings = <&mo BT>;
+        };
+
     };
 
     keymap {
@@ -112,7 +121,7 @@
             bindings = <
                 &kp ESC       &none        &none        &none        &none            &none        &kp HOME       &kp END        &none          &kp PG_UP
                 &kp LSHFT     &kp LALT     &kp LCTRL    &kp LGUI     &none            &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
-                &none         &none        &none        &none        &none            &none        &kp TAB        &none          &none          &kp PG_DN     &none         &none
+                &none         &none        &none        &none        &none            &none        &none          &kp TAB        &none          &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &kp DEL           &kp SPACE        &trans
             >;
         };
@@ -144,6 +153,16 @@
                 &kp C_STOP    &kp C_PP      &kp C_PREV   &kp C_NEXT   &none           &kp F10       &kp F1         &kp F2         &kp F3         &none
                 &none         &none         &kp C_BRI_DN &kp C_BRI_UP &none           &kp F11       &kp F4         &kp F5         &kp F6         &none        &none         &none
                                              &trans       &trans        &trans         &trans              &trans            &trans
+            >;
+        };
+
+        bt_layer {
+            label = "BT";
+            bindings = <
+                &bt BT_CLR    &out OUT_USB  &out OUT_BLE &none        &none           &none         &none          &none          &none          &none
+                &bt BT_PRV    &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT      &none         &none          &none          &none          &none
+                &none         &none         &bt BT_SEL 3 &bt BT_SEL 4 &none           &none         &none          &none          &none          &none        &none         &none
+                                             &none        &none         &none          &none               &none             &none
             >;
         };
     };

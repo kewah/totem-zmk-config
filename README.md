@@ -16,6 +16,8 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
   - hold = `EXT`
 - `MF` is a momentary thumb-chord layer:
   - hold both middle thumbs = `MF`
+- `BT` is a momentary thumb-chord layer:
+  - hold both outer thumbs = `BT`
 - `MOD` keys are hybrid modifiers:
   - tap = sticky mod
   - hold = normal held mod
@@ -29,6 +31,7 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 | SYM   | hold `Bspc/Sym`         |
 | NUM   | hold `Space/Num`        |
 | MF    | hold both middle thumbs |
+| BT    | hold both outer thumbs  |
 
 ## BASE (Graphite)
 
@@ -89,7 +92,7 @@ Right half
 | Top    |        | `HOME` | `END` |         | `PGUP` |
 | Home   | `LEFT` | `DOWN` | `UP`  | `RIGHT` |        |
 | Bottom |        | `TAB`  |       |         | `PGDN` |
-
+                                                
 Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
@@ -162,6 +165,24 @@ Right half
 | Home   | `F10` | `F1`  | `F2`  | `F3`  |       |
 | Bottom | `F11` | `F4`  | `F5`  | `F6`  |       |
 
+## BT (hold both outer thumbs)
+
+Left half
+
+| Row    | Col 1    | Col 2      | Col 3      | Col 4   | Col 5    |
+| ------ | -------- | ---------- | ---------- | ------- | -------- |
+| Top    | `BT CLR` | `OUT USB`  | `OUT BLE`  |         |          |
+| Home   | `BT PRV` | `BT 0`     | `BT 1`     | `BT 2`  | `BT NXT` |
+| Bottom |          | `BT 3`     | `BT 4`     |         |          |
+
+Right half
+
+| Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
+| ------ | ----- | ----- | ----- | ----- | ----- |
+| Top    |       |       |       |       |       |
+| Home   |       |       |       |       |       |
+| Bottom |       |       |       |       |       |
+
 ## Legend
 
 - `X/Y` = tap `X`, hold `Y`
@@ -169,7 +190,22 @@ Right half
   - tap = sticky modifier
   - hold = normal held modifier
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
+- `BT 0`-`BT 4` = directly select Bluetooth profile slots 0-4
+- `BT CLR` = clear Bluetooth bonds
+- `BT NXT` / `BT PRV` = switch Bluetooth profile
+- `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
 - Outer isolated keys are unused
+
+## Bluetooth Recovery
+
+If Bluetooth stops working after a firmware change:
+
+1. Forget the keyboard in macOS Bluetooth settings.
+2. Hold both outer thumbs to reach `BT`.
+3. Press `BT CLR`.
+4. Use `BT 0`-`BT 4` to jump directly to the host profile you want, or `BT NXT` / `BT PRV` to cycle.
+5. If the board is on the wrong output, press `OUT BLE` or `OUT USB`.
+6. If that still does not recover it, flash the `settings_reset` UF2 to both halves, then re-flash the normal left/right firmware.
 
 ## Special Base Key
 
