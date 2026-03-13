@@ -31,6 +31,27 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        comma_qmark: comma_question_mark {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_excl: dot_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        slash_bslash: slash_backslash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         hm: hybrid_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -105,7 +126,7 @@
             bindings = <
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
-                &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &kp COMMA      &kp DOT       &kp FSLH      &none
+                &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &none
                                              &kp RET     &ext_mod EXT MOD &kp LGUI      &lt_thumb SYM BSPC &lt_thumb NUM SPACE &kp LSHFT
             >;
         };
