@@ -65,7 +65,7 @@
         ext_mod: ext_or_mod {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             bindings = <&mo>, <&sl>;
