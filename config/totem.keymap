@@ -62,6 +62,16 @@
         };
     };
 
+    macros {
+        mouseless: mouseless {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>,
+                       <&macro_tap &kp RET>,
+                       <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -95,7 +105,7 @@
             bindings = <
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
-                &none        &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &kp COMMA      &kp DOT       &kp FSLH      &none
+                &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &kp COMMA      &kp DOT       &kp FSLH      &none
                                              &kp RET     &ext_mod EXT MOD &kp LGUI      &lt_thumb SYM BSPC &lt_thumb NUM SPACE &kp LSHFT
             >;
         };
