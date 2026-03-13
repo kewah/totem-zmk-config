@@ -9,15 +9,15 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 ## Layout Notes
 
 - Base layer uses Graphite.
-- The two isolated outer keys are intentionally unused.
-- The layer diagrams omit those two unused outer keys.
+- The left isolated outer key is intentionally unused.
+- The layer diagrams omit isolated outer keys unless one is used on that layer.
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
   - hold = `EXT`
 - `MF` is a momentary thumb-chord layer:
   - hold both middle thumbs = `MF`
-- `BT` is a momentary thumb-chord layer:
-  - hold both outer thumbs = `BT`
+- `BT` is reached from `MF`:
+  - hold both middle thumbs for `MF`, then hold the right isolated outer key for `BT`
 - `MOD` keys are hybrid modifiers:
   - tap = sticky mod
   - hold = normal held mod
@@ -31,7 +31,7 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 | SYM   | hold `Bspc/Sym`         |
 | NUM   | hold `Space/Num`        |
 | MF    | hold both middle thumbs |
-| BT    | hold both outer thumbs  |
+| BT    | hold right outer key on `MF` |
 
 ## BASE (Graphite)
 
@@ -165,7 +165,13 @@ Right half
 | Home   | `F10` | `F1`  | `F2`  | `F3`  |       |
 | Bottom | `F11` | `F4`  | `F5`  | `F6`  |       |
 
-## BT (hold both outer thumbs)
+Outer keys
+
+| Left outer | Right outer |
+| ---------- | ----------- |
+|            | `BT`        |
+
+## BT (hold the right outer key on `MF`)
 
 Left half
 
@@ -194,14 +200,15 @@ Right half
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
 - `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
-- Outer isolated keys are unused
+- Left isolated outer key is unused
+- Right isolated outer key on `MF` momentarily opens `BT`
 
 ## Bluetooth Recovery
 
 If Bluetooth stops working after a firmware change:
 
 1. Forget the keyboard in macOS Bluetooth settings.
-2. Hold both outer thumbs to reach `BT`.
+2. Hold both middle thumbs to reach `MF`, then hold the right isolated outer key to reach `BT`.
 3. Press `BT CLR`.
 4. Use `BT 0`-`BT 4` to jump directly to the host profile you want, or `BT NXT` / `BT PRV` to cycle.
 5. If the board is on the wrong output, press `OUT BLE` or `OUT USB`.
