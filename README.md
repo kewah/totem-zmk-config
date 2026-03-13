@@ -21,6 +21,7 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 - `MOD` keys are hybrid modifiers:
   - tap = sticky mod
   - hold = normal held mod
+- `TMX` on `MOD` sends the tmux prefix (`Ctrl+Space`)
 
 ## Layer Access
 
@@ -72,7 +73,7 @@ Right half
 | Row    | Col 1 | Col 2 | Col 3 | Col 4 | Col 5 |
 | ------ | ----- | ----- | ----- | ----- | ----- |
 | Top    |       |       |       |       |       |
-| Home   |       |       |       |       |       |
+| Home   |       | `TMX` |       |       |       |
 | Bottom |       |       |       |       |       |
 
 ## EXT (hold `Mod/Ext`)
@@ -196,6 +197,7 @@ Right half
   - tap = sticky modifier
   - hold = normal held modifier
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
+- `TMX` = tmux prefix (`Ctrl+Space`)
 - `BT 0`-`BT 4` = directly select Bluetooth profile slots 0-4
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile

@@ -91,6 +91,14 @@
                        <&macro_tap &kp RET>,
                        <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
         };
+
+        tmx: tmux_prefix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>,
+                       <&macro_tap &kp SPACE>,
+                       <&macro_release &kp LCTRL>;
+        };
     };
 
     combos {
@@ -135,7 +143,7 @@
             label = "MOD";
             bindings = <
                 &trans        &trans       &trans       &trans       &trans           &trans       &trans         &trans         &trans         &trans
-                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &hm HYPER_MOD HYPER_MOD  &trans &trans &trans &trans &trans
+                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &hm HYPER_MOD HYPER_MOD  &trans &tmx           &trans         &trans         &trans
                 &trans        &trans       &trans       &trans       &trans           &trans       &trans         &trans         &trans         &trans       &trans        &trans
                                              &trans      &trans          &trans         &trans             &trans            &trans
             >;
