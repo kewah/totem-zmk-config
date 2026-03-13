@@ -214,15 +214,6 @@ If Bluetooth stops working after a firmware change:
 5. If the board is on the wrong output, press `OUT BLE` or `OUT USB`.
 6. If that still does not recover it, flash the `settings_reset` UF2 to both halves, then re-flash the normal left/right firmware.
 
-## Special Base Key
-
-This layout has one custom base-layer key behavior:
-
-- the top-right first key sends `'` normally
-- if you hold `SHIFT`, that same key sends `"`
-
-In the tables above, that key is shown as `'/"`.
-
 ## Combos (EXT layer)
 
 | Keys | Output                 |
