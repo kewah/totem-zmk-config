@@ -135,7 +135,7 @@
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
                 &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &none
-                                             &kp RET     &ext_mod EXT MOD &kp LGUI      &lt_thumb SYM BSPC &lt_thumb NUM SPACE &kp LSHFT
+                                             &kp ESC     &ext_mod EXT MOD &kp RET       &lt_thumb SYM BSPC &lt_thumb NUM SPACE &kp LSHFT
             >;
         };
 
@@ -152,7 +152,7 @@
         ext_layer {
             label = "EXT";
             bindings = <
-                &kp ESC       &none        &none        &none        &none            &none        &kp HOME       &kp END        &none          &kp PG_UP
+                &none         &none        &none        &none        &none            &none        &kp HOME       &kp END        &none          &kp PG_UP
                 &kp LSHFT     &kp LALT     &kp LCTRL    &kp LGUI     &none            &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
                 &none         &none        &none        &none        &none            &none        &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &trans            &kp SPACE        &trans
