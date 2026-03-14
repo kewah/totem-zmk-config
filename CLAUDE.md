@@ -20,13 +20,6 @@ Firmware builds via GitHub Actions on push/PR/manual trigger. No local build nee
 
 Both `config/west.yml` and `.github/workflows/build.yml` track ZMK `main` (unpinned). Upstream ZMK changes can silently break builds. If firmware size drops significantly or BLE stops working, compare artifact sizes across recent builds with `gh api repos/kewah/totem-zmk-config/actions/runs/{id}/artifacts`.
 
-## Troubleshooting BLE
-
-If the keyboard won't connect after a firmware update:
-1. Forget device in macOS Bluetooth settings
-2. Hit BT_CLR on the keyboard (FUN layer)
-3. If still broken: flash `settings_reset` UF2 to both halves, then re-flash normal firmware. Add `settings_reset` shield to `build.yaml` to generate it.
-
 ## Key Files
 
 | File | Purpose |
@@ -36,10 +29,6 @@ If the keyboard won't connect after a firmware update:
 | `build.yaml` | Build targets |
 | `config/boards/shields/totem/totem.dtsi` | Matrix transform, GPIO config |
 | `config/boards/shields/totem/*.overlay` | Per-half pin mappings |
-
-## Dev Notes
-
-Working directory is the repo root. No need for `git -C` or `cd` prefixes.
 
 ## ZMK References
 
