@@ -92,13 +92,13 @@ Right half
 | ------ | ------ | ------ | ----- | ------- | ------ |
 | Top    |        | `HOME` | `END` |         | `PGUP` |
 | Home   | `LEFT` | `DOWN` | `UP`  | `RIGHT` |        |
-| Bottom |        | `TAB`  |       |         | `PGDN` |
+| Bottom |        | `TAB`  | `DEL` |         | `PGDN` |
                                                 
 Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `EXT`       |            | `DEL`       | `SPC`        |             |
+|            | `EXT`       |            |             | `SPC`        |             |
 
 ## SYM (hold `Bspc/Sym`)
 
