@@ -143,7 +143,7 @@
             label = "MOD";
             bindings = <
                 &trans        &trans       &trans       &trans       &trans           &trans       &trans         &trans         &trans         &trans
-                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &hm HYPER_MOD HYPER_MOD  &trans &tmx           &trans         &trans         &trans
+                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &trans  &trans &hm HYPER_MOD HYPER_MOD &trans         &trans         &tmx
                 &trans        &trans       &trans       &trans       &trans           &trans       &trans         &trans         &trans         &trans       &trans        &trans
                                              &trans      &trans          &trans         &trans             &trans            &trans
             >;
