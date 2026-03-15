@@ -90,7 +90,7 @@ Right half
 
 | Row    | Col 1  | Col 2  | Col 3 | Col 4   | Col 5  |
 | ------ | ------ | ------ | ----- | ------- | ------ |
-| Top    |        | `HOME` | `END` |         | `PGUP` |
+| Top    | `RALT` | `HOME` | `END` |         | `PGUP` |
 | Home   | `LEFT` | `DOWN` | `UP`  | `RIGHT` |        |
 | Bottom |        | `TAB`  | `DEL` |         | `PGDN` |
                                                 
@@ -198,6 +198,7 @@ Right half
   - hold = normal held modifier
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
 - `TMX` = tmux prefix (`Ctrl+Space`)
+- `RALT` = Right Alt (used for VoiceInk speech-to-text)
 - `BT 0`-`BT 4` = directly select Bluetooth profile slots 0-4
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
