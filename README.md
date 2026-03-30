@@ -83,8 +83,8 @@ Left half
 | Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
 | ------ | ------- | ----- | ------ | ----- | ----- |
 | Top    |         |       |        |       |       |
-| Home   | `SHIFT` | `ALT` | `CTRL` | `CMD` |       |
-| Bottom |         |       |        |       |       |
+| Home   | `SHIFT†` | `ALT†` | `CTRL†` | `CMD†` |       |
+| Bottom |          |        |         |        |       |
 
 Right half
 
@@ -196,6 +196,9 @@ Right half
 - `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
   - tap = sticky modifier
   - hold = normal held modifier
+- `SHIFT†`, `ALT†`, `CTRL†`, `CMD†` on `EXT`:
+  - sticky modifiers (tap to activate, auto-release after next keypress)
+  - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
 - `TMX` = tmux prefix (`Ctrl+Space`)
 - `RALT` = Right Alt (used for VoiceInk speech-to-text)
