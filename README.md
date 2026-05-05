@@ -16,8 +16,8 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
   - hold = `EXT`
 - `MF` is a momentary thumb-chord layer:
   - hold both middle thumbs = `MF`
-- `BT` is reached from `MF`:
-  - hold both middle thumbs for `MF`, then hold the right isolated outer key for `BT`
+- `BT` is a momentary thumb-chord layer:
+  - hold left middle thumb + right outer thumb = `BT`
 - `MOD` keys are hybrid modifiers:
   - tap = sticky mod
   - hold = normal held mod
@@ -32,7 +32,7 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 | SYM   | hold `Bspc/Sym`         |
 | NUM   | hold `Space/Num`        |
 | MF    | hold both middle thumbs |
-| BT    | hold right outer key on `MF` |
+| BT    | hold left middle thumb + right outer thumb |
 
 ## BASE (Graphite)
 
@@ -166,13 +166,7 @@ Right half
 | Home   | `F10` | `F1`  | `F2`  | `F3`  |       |
 | Bottom | `F11` | `F4`  | `F5`  | `F6`  |       |
 
-Outer keys
-
-| Left outer | Right outer |
-| ---------- | ----------- |
-|            | `BT`        |
-
-## BT (hold the right outer key on `MF`)
+## BT (hold left middle thumb + right outer thumb)
 
 Left half
 
@@ -206,15 +200,14 @@ Right half
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
 - `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
-- Left isolated outer key is unused
-- Right isolated outer key on `MF` momentarily opens `BT`
+- Left and right isolated outer keys are unused
 
 ## Bluetooth Recovery
 
 If Bluetooth stops working after a firmware change:
 
 1. Forget the keyboard in macOS Bluetooth settings.
-2. Hold both middle thumbs to reach `MF`, then hold the right isolated outer key to reach `BT`.
+2. Hold left middle thumb + right outer thumb to reach `BT`.
 3. Press `BT CLR`.
 4. Use `BT 0`-`BT 4` to jump directly to the host profile you want, or `BT NXT` / `BT PRV` to cycle.
 5. If the board is on the wrong output, press `OUT BLE` or `OUT USB`.

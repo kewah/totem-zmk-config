@@ -5,7 +5,7 @@
 // - Hold EXT for navigation/editing, tap EXT for sticky MOD
 // - Symbols prioritized for markup and writing
 // - Shared media/function layer on dual-thumb chords
-// - Right outer isolated key on MF opens BT layer
+// - Left middle + right outer thumb combo opens BT layer
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -119,9 +119,16 @@
         };
 
         combo_mf_middle_thumbs {
-            timeout-ms = <60>;
+            timeout-ms = <100>;
             key-positions = <33 36>;
             bindings = <&mo MF>;
+        };
+
+        combo_bt {
+            timeout-ms = <100>;
+            key-positions = <33 37>;
+            bindings = <&mo BT>;
+            layers = <BASE>;
         };
 
     };
@@ -184,7 +191,7 @@
             bindings = <
                 &none         &kp C_MUTE    &kp C_VOL_DN &kp C_VOL_UP &none           &kp F12       &kp F7         &kp F8         &kp F9         &none
                 &kp C_STOP    &kp C_PP      &kp C_PREV   &kp C_NEXT   &none           &kp F10       &kp F1         &kp F2         &kp F3         &none
-                &none         &none         &kp C_BRI_DN &kp C_BRI_UP &none           &kp F11       &kp F4         &kp F5         &kp F6         &none        &none         &mo BT
+                &none         &none         &kp C_BRI_DN &kp C_BRI_UP &none           &kp F11       &kp F4         &kp F5         &kp F6         &none        &none         &none
                                              &trans       &trans        &trans         &trans              &trans            &trans
             >;
         };
