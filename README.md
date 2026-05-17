@@ -98,7 +98,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `EXT`       |            |             | `SPC`        |             |
+|            | `EXT`       |            | `DEL`       | `SPC`        |             |
 
 ## SYM (hold `Bspc/Sym`)
 
