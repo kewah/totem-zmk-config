@@ -172,7 +172,7 @@
             bindings = <
                 &kp LG(LBKT)  &kp LG(GRAVE) &swapper    &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &none            &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
-                &none         &kp LG(RBKT) &kp LG(X)    &kp LG(C)    &kp LG(V)        &none        &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
+                &none         &kp LG(RBKT) &kp LG(X)    &none        &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &kp DEL           &kp SPACE        &trans
             >;
         };

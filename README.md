@@ -85,7 +85,7 @@ Left half
 | ------ | -------- | --------- | ------- | ------- | ------- |
 | Top    | `CMD+[`  | ``CMD+` `` | `SWAP`  | `CMD+W` | `CMD+Z` |
 | Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  |         |
-| Bottom | `CMD+]`  | `CMD+X`   | `CMD+C` | `CMD+V` |         |
+| Bottom | `CMD+]`  | `CMD+X`   |         | `CMD+C` | `CMD+V` |
 
 Right half
 
@@ -196,6 +196,7 @@ Right half
   - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
 - `SWAP` = Cmd+Tab app switcher (tri-state): tap to open the macOS switcher and advance, Cmd stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
 - `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
+- `CMD+Z/X/C/V/W` on `EXT` sit on their Graphite letter positions as mnemonics
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
 - `TMX` = tmux prefix (`Ctrl+Space`)
 - `RALT` = Right Alt (used for VoiceInk speech-to-text)
