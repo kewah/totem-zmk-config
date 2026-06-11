@@ -3,7 +3,8 @@
 // - Graphite base
 // - Dedicated MOD layer instead of base home row mods
 // - Hold EXT for navigation/editing, tap EXT for sticky MOD
-// - EXT left hand: one-handed mouse companion (swapper, history, clipboard)
+// - EXT left hand: one-handed mouse companion (swapper, history, clipboard),
+//   mirrored on MOD so tap-then-key one-shots the same shortcuts
 // - Symbols prioritized for markup and writing
 // - Shared media/function layer on dual-thumb chords
 // - Left middle + right outer thumb combo opens BT layer
@@ -103,6 +104,16 @@
                        <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
         };
 
+        // Instant switch to previous app: Cmd released right away so
+        // the macOS switcher UI never shows (unlike &kp LG(TAB)).
+        quick_swap: quick_app_swap {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI>,
+                       <&macro_tap &kp TAB>,
+                       <&macro_release &kp LGUI>;
+        };
+
         tmx: tmux_prefix {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -157,12 +168,15 @@
             >;
         };
 
+        // Left-hand Cmd shortcuts mirror EXT at the same positions so
+        // tap-then-key one-shots them. SWAP's position gets quick_swap
+        // instead: the tri-state can't cycle from a sticky layer.
         mod_layer {
             label = "MOD";
             bindings = <
-                &trans        &trans       &trans       &trans       &trans           &trans       &trans         &trans         &trans         &trans
+                &kp LG(LBKT)  &kp LG(GRAVE) &quick_swap &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
                 &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &trans  &trans &hm HYPER_MOD HYPER_MOD &trans         &trans         &tmx
-                &trans        &trans       &trans       &trans       &trans           &trans       &trans         &trans         &trans         &trans       &trans        &trans
+                &trans        &kp LG(RBKT) &kp LG(X)    &trans       &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
                                              &trans      &trans          &trans         &trans             &trans            &trans
             >;
         };

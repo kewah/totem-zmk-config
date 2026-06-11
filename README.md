@@ -63,11 +63,11 @@ Thumbs
 
 Left half
 
-| Row    | Col 1    | Col 2  | Col 3   | Col 4  | Col 5 |
-| ------ | -------- | ------ | ------- | ------ | ----- |
-| Top    |          |        |         |        |       |
-| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `CMD*` |       |
-| Bottom |          |        |         |        |       |
+| Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
+| ------ | -------- | --------- | ------- | ------- | ------- |
+| Top    | `CMD+[`  | ``CMD+` `` | `QSWAP` | `CMD+W` | `CMD+Z` |
+| Home   | `SHIFT*` | `ALT*`    | `CTRL*` | `CMD*`  |         |
+| Bottom | `CMD+]`  | `CMD+X`   |         | `CMD+C` | `CMD+V` |
 
 Right half
 
@@ -195,8 +195,10 @@ Right half
   - sticky modifiers (tap to activate, auto-release after next keypress)
   - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
 - `SWAP` = Cmd+Tab app switcher (tri-state): tap to open the macOS switcher and advance, Cmd stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
+- `QSWAP` = instant switch to previous app (Cmd+Tab with immediate release, no switcher UI), same key as `SWAP`
 - `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
-- `CMD+Z/X/C/V/W` on `EXT` sit on their Graphite letter positions as mnemonics
+- `CMD+Z/X/C/V/W` sit on their Graphite letter positions as mnemonics
+- Left-hand `CMD` shortcuts exist on both layers: tap `Mod/Ext` for a one-shot (`MOD`), hold for repeats and `SWAP` cycling (`EXT`)
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
 - `TMX` = tmux prefix (`Ctrl+Space`)
 - `RALT` = Right Alt (used for VoiceInk speech-to-text)
