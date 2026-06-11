@@ -14,6 +14,7 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
   - hold = `EXT`
+- `EXT` left half is a one-handed mouse companion: app switching, window cycling, back/forward, close tab, undo/cut/copy/paste while the right hand stays on the mouse.
 - `MF` is a momentary thumb-chord layer:
   - hold both middle thumbs = `MF`
 - `BT` is a momentary thumb-chord layer:
@@ -80,11 +81,11 @@ Right half
 
 Left half
 
-| Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
-| ------ | ------- | ----- | ------ | ----- | ----- |
-| Top    |         |       |        |       |       |
-| Home   | `SHIFT†` | `ALT†` | `CTRL†` | `CMD†` |       |
-| Bottom |          |        |         |        |       |
+| Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
+| ------ | -------- | --------- | ------- | ------- | ------- |
+| Top    | `CMD+[`  | ``CMD+` `` | `SWAP`  | `CMD+W` | `CMD+Z` |
+| Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  |         |
+| Bottom | `CMD+]`  | `CMD+X`   | `CMD+C` | `CMD+V` |         |
 
 Right half
 
@@ -193,6 +194,8 @@ Right half
 - `SHIFT†`, `ALT†`, `CTRL†`, `CMD†` on `EXT`:
   - sticky modifiers (tap to activate, auto-release after next keypress)
   - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
+- `SWAP` = Cmd+Tab app switcher (tri-state): tap to open the macOS switcher and advance, Cmd stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
+- `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
 - `TMX` = tmux prefix (`Ctrl+Space`)
 - `RALT` = Right Alt (used for VoiceInk speech-to-text)

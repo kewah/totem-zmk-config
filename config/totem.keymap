@@ -3,6 +3,7 @@
 // - Graphite base
 // - Dedicated MOD layer instead of base home row mods
 // - Hold EXT for navigation/editing, tap EXT for sticky MOD
+// - EXT left hand: one-handed mouse companion (swapper, history, clipboard)
 // - Symbols prioritized for markup and writing
 // - Shared media/function layer on dual-thumb chords
 // - Left middle + right outer thumb combo opens BT layer
@@ -70,6 +71,16 @@
             quick-tap-ms = <175>;
             bindings = <&mo>, <&sl>;
             retro-tap;
+        };
+
+        // Cmd-Tab app switcher: holds Cmd across taps, released on
+        // interrupt (any other key or leaving EXT). Sticky Shift (pos 10)
+        // is ignored so it can reverse-cycle without dropping Cmd.
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <10>;
         };
 
         lt_thumb: layer_tap_thumb {
@@ -159,9 +170,9 @@
         ext_layer {
             label = "EXT";
             bindings = <
-                &none         &none        &none        &none        &none            &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
+                &kp LG(LBKT)  &kp LG(GRAVE) &swapper    &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &none            &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
-                &none         &none        &none        &none        &none            &none        &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
+                &none         &kp LG(RBKT) &kp LG(X)    &kp LG(C)    &kp LG(V)        &none        &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &kp DEL           &kp SPACE        &trans
             >;
         };

@@ -18,7 +18,7 @@ Firmware builds via GitHub Actions on push/PR/manual trigger. No local build nee
 
 **Important**: The `//zmk` board variant suffix is required (ZMK HWMv2 board extensions). Without it, the build produces a stock Zephyr image (~87KB) missing the BLE stack instead of a proper ZMK firmware (~335KB).
 
-Both `config/west.yml` and `.github/workflows/build.yml` track ZMK `main` (unpinned). Upstream ZMK changes can silently break builds. If firmware size drops significantly or BLE stops working, compare artifact sizes across recent builds with `gh api repos/kewah/totem-zmk-config/actions/runs/{id}/artifacts`.
+Both `config/west.yml` and `.github/workflows/build.yml` track ZMK `main` (unpinned). `config/west.yml` also pulls the `dhruvinsh/zmk-tri-state` module (unpinned) for the EXT-layer Cmd+Tab swapper. Upstream ZMK changes can silently break builds. If firmware size drops significantly or BLE stops working, compare artifact sizes across recent builds with `gh api repos/kewah/totem-zmk-config/actions/runs/{id}/artifacts`.
 
 ## Key Files
 
