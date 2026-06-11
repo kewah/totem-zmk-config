@@ -66,7 +66,7 @@ Left half
 | Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
 | ------ | -------- | --------- | ------- | ------- | ------- |
 | Top    | `CMD+[`  | ``CMD+` `` | `QSWAP` | `CMD+W` | `CMD+Z` |
-| Home   | `SHIFT*` | `ALT*`    | `CTRL*` | `CMD*`  |         |
+| Home   | `SHIFT*` | `ALT*`    | `CTRL*` | `CMD*`  | `CMD+R` |
 | Bottom | `CMD+]`  | `CMD+X`   |         | `CMD+C` | `CMD+V` |
 
 Right half
@@ -84,7 +84,7 @@ Left half
 | Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
 | ------ | -------- | --------- | ------- | ------- | ------- |
 | Top    | `CMD+[`  | ``CMD+` `` | `SWAP`  | `CMD+W` | `CMD+Z` |
-| Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  |         |
+| Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  | `CMD+R` |
 | Bottom | `CMD+]`  | `CMD+X`   |         | `CMD+C` | `CMD+V` |
 
 Right half
@@ -198,6 +198,7 @@ Right half
 - `QSWAP` = instant switch to previous app (Cmd+Tab with immediate release, no switcher UI), same key as `SWAP`
 - `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
 - `CMD+Z/X/C/V/W` sit on their Graphite letter positions as mnemonics
+- `CMD+R` (reload) sits on the home row inner column (R's letter position holds `ALT†`/`ALT*`)
 - Left-hand `CMD` shortcuts exist on both layers: tap `Mod/Ext` for a one-shot (`MOD`), hold for repeats and `SWAP` cycling (`EXT`)
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
 - `TMX` = tmux prefix (`Ctrl+Space`)

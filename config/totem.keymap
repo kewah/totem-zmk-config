@@ -175,7 +175,7 @@
             label = "MOD";
             bindings = <
                 &kp LG(LBKT)  &kp LG(GRAVE) &quick_swap &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
-                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &trans  &trans &hm HYPER_MOD HYPER_MOD &trans         &trans         &tmx
+                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
                 &trans        &kp LG(RBKT) &kp LG(X)    &trans       &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
                                              &trans      &trans          &trans         &trans             &trans            &trans
             >;
@@ -185,7 +185,7 @@
             label = "EXT";
             bindings = <
                 &kp LG(LBKT)  &kp LG(GRAVE) &swapper    &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
-                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &none            &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
+                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
                 &none         &kp LG(RBKT) &kp LG(X)    &none        &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &kp DEL           &kp SPACE        &trans
             >;
