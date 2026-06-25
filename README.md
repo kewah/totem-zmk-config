@@ -9,12 +9,12 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 ## Layout Notes
 
 - Base layer uses Graphite.
-- The left isolated outer key is intentionally unused.
+- The right isolated outer key is intentionally unused. The left isolated outer key holds `Mouseless` (`Hyper+Enter`) on `BASE` and `` CMD+` `` (cycle app windows) on `EXT`/`MOD`.
 - The layer diagrams omit isolated outer keys unless one is used on that layer.
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
   - hold = `EXT`
-- `EXT` left half is a one-handed mouse companion: app switching, window cycling, back/forward, close tab, undo/cut/copy/paste while the right hand stays on the mouse.
+- `EXT` left half is a one-handed mouse companion: app switching, tab cycling, window cycling, back/forward, close, select all, undo/cut/copy/paste while the right hand stays on the mouse.
 - `MF` is a momentary thumb-chord layer:
   - hold both middle thumbs = `MF`
 - `BT` is a momentary thumb-chord layer:
@@ -65,9 +65,9 @@ Left half
 
 | Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
 | ------ | -------- | --------- | ------- | ------- | ------- |
-| Top    | `CMD+[`  | ``CMD+` `` | `QSWAP` | `CMD+W` | `CMD+Z` |
+| Top    | `CMD+[`  | `CTRL+TAB` | `QSWAP` | `CMD+W` | `CMD+Z` |
 | Home   | `SHIFT*` | `ALT*`    | `CTRL*` | `CMD*`  | `CMD+R` |
-| Bottom | `CMD+]`  | `CMD+X`   |         | `CMD+C` | `CMD+V` |
+| Bottom | `CMD+]`  | `CMD+X`   | `CMD+A` | `CMD+C` | `CMD+V` |
 
 Right half
 
@@ -83,9 +83,9 @@ Left half
 
 | Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
 | ------ | -------- | --------- | ------- | ------- | ------- |
-| Top    | `CMD+[`  | ``CMD+` `` | `SWAP`  | `CMD+W` | `CMD+Z` |
+| Top    | `CMD+[`  | `CTRL+TAB` | `SWAP`  | `CMD+W` | `CMD+Z` |
 | Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  | `CMD+R` |
-| Bottom | `CMD+]`  | `CMD+X`   |         | `CMD+C` | `CMD+V` |
+| Bottom | `CMD+]`  | `CMD+X`   | `CMD+A` | `CMD+C` | `CMD+V` |
 
 Right half
 
@@ -196,8 +196,10 @@ Right half
   - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
 - `SWAP` = Cmd+Tab app switcher (tri-state): tap to open the macOS switcher and advance, Cmd stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
 - `QSWAP` = instant switch to previous app (Cmd+Tab with immediate release, no switcher UI), same key as `SWAP`
+- `CTRL+TAB` = cycle tabs, sits beside `SWAP`/`QSWAP` (tab switching next to app switching)
 - `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
 - `CMD+Z/X/C/V/W` sit on their Graphite letter positions as mnemonics
+- `CMD+A` (select all) sits left of `CMD+C` to cluster select/copy/paste for one-handed use, not on its letter position
 - `CMD+R` (reload) sits on the home row inner column (R's letter position holds `ALT†`/`ALT*`)
 - Left-hand `CMD` shortcuts exist on both layers: tap `Mod/Ext` for a one-shot (`MOD`), hold for repeats and `SWAP` cycling (`EXT`)
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
@@ -207,7 +209,7 @@ Right half
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
 - `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
-- Left and right isolated outer keys are unused
+- The right isolated outer key is unused; the left holds `Mouseless` (`BASE`) and `` CMD+` `` (`EXT`/`MOD`)
 
 ## Bluetooth Recovery
 
