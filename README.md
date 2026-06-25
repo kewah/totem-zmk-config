@@ -83,7 +83,7 @@ Left half
 
 | Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
 | ------ | -------- | --------- | ------- | ------- | ------- |
-| Top    | `CMD+[`  | `CTRL+TAB` | `SWAP`  | `CMD+W` | `CMD+Z` |
+| Top    | `CMD+[`  | `TSWAP`    | `SWAP`  | `CMD+W` | `CMD+Z` |
 | Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  | `CMD+R` |
 | Bottom | `CMD+]`  | `CMD+X`   | `CMD+A` | `CMD+C` | `CMD+V` |
 
@@ -196,7 +196,8 @@ Right half
   - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
 - `SWAP` = Cmd+Tab app switcher (tri-state): tap to open the macOS switcher and advance, Cmd stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
 - `QSWAP` = instant switch to previous app (Cmd+Tab with immediate release, no switcher UI), same key as `SWAP`
-- `CTRL+TAB` = cycle tabs, sits beside `SWAP`/`QSWAP` (tab switching next to app switching)
+- `TSWAP` = Ctrl+Tab tab switcher (tri-state): holds Ctrl across taps so the browser tab switcher stays up, tap `SHIFT†` to reverse (Ctrl+Shift+Tab), release `Mod/Ext` to commit. Sits beside `SWAP` (tab switching next to app switching)
+- `CTRL+TAB` on `MOD` = plain one-shot Ctrl+Tab, same key position as `TSWAP`
 - `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
 - `CMD+Z/X/C/V/W` sit on their Graphite letter positions as mnemonics
 - `CMD+A` (select all) sits left of `CMD+C` to cluster select/copy/paste for one-handed use, not on its letter position

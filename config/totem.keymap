@@ -84,6 +84,16 @@
             ignored-key-positions = <10>;
         };
 
+        // Ctrl-Tab tab switcher: same tri-state as swapper but holds Ctrl,
+        // so taps cycle tabs while the browser switcher stays up. Sticky
+        // Shift (pos 10) is ignored so it can reverse-cycle (Ctrl+Shift+Tab).
+        tab_swapper: tab_swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
+            ignored-key-positions = <10>;
+        };
+
         lt_thumb: layer_tap_thumb {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -184,7 +194,7 @@
         ext_layer {
             label = "EXT";
             bindings = <
-                &kp LG(LBKT)  &kp LC(TAB)  &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
+                &kp LG(LBKT)  &tab_swapper &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &kp DEL           &kp SPACE        &trans
