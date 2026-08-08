@@ -32,6 +32,10 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
   - hold = normal held mod
 - `TMX` on `MOD` sends the tmux prefix (`Ctrl+Space`)
 
+### Thumb Placement Philosophy
+
+`Mod/Ext` remains the central anchor. Because Escape is tapped but not held, its hold action becomes Shift and frees a thumb key for `Sym`. Moving Enter to the opposite half preserves a simple Shift+Enter chord; on that half, frequent `Enter` and `Space` take priority over less-used `Num`. Enter and Space stay dedicated and repeatable, while the freed `Sym` and `Num` triggers consistently use sticky tap and momentary hold.
+
 ## Layer Access
 
 | Layer | Access                                      |
@@ -157,11 +161,13 @@ Right half
 | Home   | `HYP` | `CMD` | `CTRL` | `ALT` | `SHIFT` |
 | Bottom |       |       |        |       |         |
 
-Thumbs
+Thumbs (left hand)
 
-| Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
-| ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-| `:`        | `0`         | `=`        | `RET`       | `SPC`        | `NUM`       |
+| Left outer | Left middle | Left inner |
+| ---------- | ----------- | ---------- |
+| `:`        | `0`         | `=`        |
+
+The right outer thumb holds the `NUM` trigger, so right-hand thumb positions are omitted.
 
 ## MF (hold both outer thumbs: `Esc/Shift` + `Num`)
 
