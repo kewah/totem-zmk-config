@@ -4,7 +4,7 @@ Personal ZMK firmware configuration for the [Totem](https://github.com/GEIGEIGEI
 
 Based on [GEIGEIGEIST/zmk-config-totem](https://github.com/GEIGEIGEIST/zmk-config-totem).
 
-Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum#readme).
+Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https://stevep99.github.io/seniply/), and [Callum](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum#readme).
 
 ## Layout Notes
 
@@ -14,11 +14,19 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
   - hold = `EXT`
+- The remaining thumb keys are organized by role:
+  - tap `Esc/Shift` for Escape; hold it for Shift
+  - tap `Sym` or `Num` for one sticky layer key; hold for a sequence
+  - `Enter` and `Space` are dedicated, normally repeatable keys
+  - hold `Esc/Shift` with the left thumb and tap `Enter` with the right thumb for Shift+Enter
+- `Delete` and `Backspace` occupy the Enter and Space positions on both `MOD` and `EXT`:
+  - tap `Mod/Ext`, then tap the position for a one-shot edit
+  - hold `Mod/Ext`, then hold the position for normal key repeat
 - `EXT` left half is a one-handed mouse companion: app switching, tab cycling, window cycling, back/forward, close, select all, undo/cut/copy/paste while the right hand stays on the mouse.
 - `MF` is a momentary thumb-chord layer:
-  - hold both middle thumbs = `MF`
+  - hold both outer thumbs (`Esc/Shift` + `Num`) = `MF`
 - `BT` is a momentary thumb-chord layer:
-  - hold left middle thumb + right outer thumb = `BT`
+  - hold `Mod/Ext` + `Num` = `BT`
 - `MOD` keys are hybrid modifiers:
   - tap = sticky mod
   - hold = normal held mod
@@ -26,14 +34,14 @@ Inspired by [Seniply](https://stevep99.github.io/seniply/) and [Callum](https://
 
 ## Layer Access
 
-| Layer | Access                  |
-| ----- | ----------------------- |
-| MOD   | tap `Mod/Ext`           |
-| EXT   | hold `Mod/Ext`          |
-| SYM   | hold `Bspc/Sym`         |
-| NUM   | hold `Space/Num`        |
-| MF    | hold both middle thumbs |
-| BT    | hold left middle thumb + right outer thumb |
+| Layer | Access                                      |
+| ----- | ------------------------------------------- |
+| MOD   | tap `Mod/Ext`                               |
+| EXT   | hold `Mod/Ext`                              |
+| SYM   | tap `Sym` for sticky; hold for momentary    |
+| NUM   | tap `Num` for sticky; hold for momentary    |
+| MF    | hold both outer thumbs (`Esc/Shift` + `Num`) |
+| BT    | hold `Mod/Ext` + `Num`                      |
 
 ## BASE (Graphite)
 
@@ -57,7 +65,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-| `ESC`      | `MOD/EXT`   | `RET`      | `BSP/SYM`   | `SPC/NUM`    | `SHIFT`     |
+| `ESC/SHIFT` | `MOD/EXT`  | `SYM†`     | `RET`       | `SPC`        | `NUM†`      |
 
 ## MOD (tap `Mod/Ext`)
 
@@ -76,6 +84,12 @@ Right half
 | Top    |       |        |       |       |       |
 | Home   |       | `HYP*` |       |       | `TMX` |
 | Bottom |       |        |       |       |       |
+
+Thumbs
+
+| Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
+| ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
+|            | `MOD`       |            | `DEL`       | `BSP`        |             |
 
 ## EXT (hold `Mod/Ext`)
 
@@ -99,9 +113,9 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `EXT`       |            | `DEL`       | `SPC`        |             |
+|            | `EXT`       |            | `DEL`       | `BSP`        |             |
 
-## SYM (hold `Bspc/Sym`)
+## SYM (tap `Sym` for sticky; hold for momentary)
 
 Left half
 
@@ -123,9 +137,9 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            |             |            | `SYM`       |              |             |
+|            |             | `SYM`      | `RET`       | `SPC`        | `NUM†`      |
 
-## NUM (hold `Space/Num`)
+## NUM (tap `Num` for sticky; hold for momentary)
 
 Left half
 
@@ -147,9 +161,9 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-| `:`        | `0`         | `=`        |             | `NUM`        |             |
+| `:`        | `0`         | `=`        | `RET`       | `SPC`        | `NUM`       |
 
-## MF (hold both middle thumbs)
+## MF (hold both outer thumbs: `Esc/Shift` + `Num`)
 
 Left half
 
@@ -167,7 +181,7 @@ Right half
 | Home   | `F10` | `F1`  | `F2`  | `F3`  |       |
 | Bottom | `F11` | `F4`  | `F5`  | `F6`  |       |
 
-## BT (hold left middle thumb + right outer thumb)
+## BT (hold `Mod/Ext` + `Num`)
 
 Left half
 
@@ -188,6 +202,10 @@ Right half
 ## Legend
 
 - `X/Y` = tap `X`, hold `Y`
+- `SYM†`, `NUM†` = tap for a sticky one-key layer, hold for a momentary layer
+- `DEL`/`BSP` on `MOD` and `EXT`:
+  - tap `Mod/Ext`, then tap `Enter`/`Space` for one Delete/Backspace
+  - hold `Mod/Ext`, then hold `Enter`/`Space` for repeating Delete/Backspace
 - `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
   - tap = sticky modifier
   - hold = normal held modifier
@@ -217,7 +235,7 @@ Right half
 If Bluetooth stops working after a firmware change:
 
 1. Forget the keyboard in macOS Bluetooth settings.
-2. Hold left middle thumb + right outer thumb to reach `BT`.
+2. Hold `Mod/Ext` + `Num` to reach `BT`.
 3. Press `BT CLR`.
 4. Use `BT 0`-`BT 4` to jump directly to the host profile you want, or `BT NXT` / `BT PRV` to cycle.
 5. If the board is on the wrong output, press `OUT BLE` or `OUT USB`.

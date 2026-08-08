@@ -5,9 +5,12 @@
 // - Hold EXT for navigation/editing, tap EXT for sticky MOD
 // - EXT left hand: one-handed mouse companion (swapper, history, clipboard),
 //   mirrored on MOD so tap-then-key one-shots the same shortcuts
+// - Thumb Shift: tap Escape, hold Shift
+// - Dedicated Enter and Space; sticky-tap/held SYM and NUM
+// - Delete and Backspace mirrored on MOD/EXT for one-shot or held repeat
 // - Symbols prioritized for markup and writing
-// - Shared media/function layer on dual-thumb chords
-// - Left middle + right outer thumb combo opens BT layer
+// - Both outer thumbs open the shared media/function layer
+// - MOD/EXT + NUM opens the BT layer
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -94,14 +97,23 @@
             ignored-key-positions = <10>;
         };
 
-        lt_thumb: layer_tap_thumb {
+        // Escape is a discrete tap; Shift resolves as soon as a chord starts.
+        esc_shift: escape_or_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Layer-only thumbs converge on the same layer: sticky when tapped,
+        // momentary when held. Pass the target layer in both parameter cells.
+        sticky_layer: sticky_or_held_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <150>;
-            bindings = <&mo>, <&kp>;
+            tapping-term-ms = <300>;
+            bindings = <&mo>, <&sl>;
         };
     };
 
@@ -150,12 +162,15 @@
             layers = <EXT>;
         };
 
-        combo_mf_middle_thumbs {
+        // MF moved off MOD/EXT + Space so that chord can repeat Backspace.
+        combo_mf_outer_thumbs {
             timeout-ms = <100>;
-            key-positions = <33 36>;
+            key-positions = <32 37>;
             bindings = <&mo MF>;
+            layers = <BASE>;
         };
 
+        // MOD/EXT + the right outer NUM key is reserved for maintenance.
         combo_bt {
             timeout-ms = <100>;
             key-positions = <33 37>;
@@ -174,7 +189,7 @@
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
                 &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &none
-                                             &kp ESC     &ext_mod EXT MOD &kp RET       &lt_thumb SYM BSPC &lt_thumb NUM SPACE &kp LSHFT
+                                             &esc_shift LSHFT ESC &ext_mod EXT MOD &sticky_layer SYM SYM &kp RET &kp SPACE &sticky_layer NUM NUM
             >;
         };
 
@@ -187,7 +202,7 @@
                 &kp LG(LBKT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
                 &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
-                                             &trans      &trans          &trans         &trans             &trans            &trans
+                                             &trans      &trans          &trans         &kp DEL            &kp BSPC         &trans
             >;
         };
 
@@ -197,7 +212,7 @@
                 &kp LG(LBKT)  &tab_swapper &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
-                                             &trans       &trans          &trans         &kp DEL           &kp SPACE        &trans
+                                             &trans       &trans          &trans         &kp DEL           &kp BSPC         &trans
             >;
         };
 
