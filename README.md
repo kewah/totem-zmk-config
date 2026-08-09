@@ -25,7 +25,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 - `Delete` is available on the `EXT` comma position.
 - `EXT` left half is a one-handed mouse companion: app switching, tab cycling, window cycling, back/forward, close, select all, undo/cut/copy/paste while the right hand stays on the mouse.
 - `MF` is a momentary thumb-chord layer:
-  - hold both outer thumbs (`Esc/Shift` + `Num`) = `MF`
+  - hold both inner layer thumbs (`Sym` + `Num`) = `MF`
 - `BT` is a momentary thumb-chord layer:
   - hold `Mod/Ext` + `Num` = `BT`
 - `MOD` keys are hybrid modifiers:
@@ -35,7 +35,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 
 ### Thumb Placement Philosophy
 
-`Mod/Ext` remains the central anchor. Because Escape is tapped but not held, its hold action becomes Shift and frees a thumb key for `Sym`. Moving Enter to the opposite half preserves a simple Shift+Enter chord; on that half, frequent `Enter` and `Space` take priority over less-used `Num`. Enter and Space stay dedicated and repeatable, while the freed `Sym` and `Num` triggers consistently use sticky tap and momentary hold.
+`Mod/Ext` and `Space` occupy the middle resting positions. `Sym` and `Num` mirror each other on the inner thumbs, while `Esc/Shift` and `Enter` mirror each other on the outer thumbs for a simple two-thumb Shift+Enter chord. Enter and Space stay dedicated and repeatable, and the layer triggers consistently use sticky tap and momentary hold.
 
 ## Layer Access
 
@@ -45,7 +45,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 | EXT   | hold `Mod/Ext`                              |
 | SYM   | tap `Sym` for sticky; hold for momentary    |
 | NUM   | tap `Num` for sticky; hold for momentary    |
-| MF    | hold both outer thumbs (`Esc/Shift` + `Num`) |
+| MF    | hold both inner thumbs (`Sym` + `Num`)       |
 | BT    | hold `Mod/Ext` + `Num`                      |
 
 ## BASE (Graphite)
@@ -70,7 +70,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-| `ESC/SHIFT` | `MOD/EXT`  | `SYM†`     | `RET`       | `SPC`        | `NUM†`      |
+| `ESC/SHIFT` | `MOD/EXT`  | `SYM†`     | `NUM†`      | `SPC`        | `RET`       |
 
 ## MOD (tap `Mod/Ext`)
 
@@ -142,7 +142,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            |             | `SYM`      | `RET`       | `SPC`        | `NUM†`      |
+|            |             | `SYM`      | `NUM†`      | `SPC`        | `RET`       |
 
 ## NUM (tap `Num` for sticky; hold for momentary)
 
@@ -168,9 +168,9 @@ Thumbs (left hand)
 | ---------- | ----------- | ---------- |
 | `:`        | `0`         | `=`        |
 
-The right outer thumb holds the `NUM` trigger, so right-hand thumb positions are omitted.
+The right inner thumb holds the `NUM` trigger, so right-hand thumb positions are omitted.
 
-## MF (hold both outer thumbs: `Esc/Shift` + `Num`)
+## MF (hold both inner layer thumbs: `Sym` + `Num`)
 
 Left half
 

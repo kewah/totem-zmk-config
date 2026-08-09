@@ -10,7 +10,7 @@
 // - Backspace mirrored on MOD/EXT for one-shot or held repeat
 // - Delete stays on the EXT comma position
 // - Symbols prioritized for markup and writing
-// - Both outer thumbs open the shared media/function layer
+// - SYM + NUM opens the shared media/function layer
 // - MOD/EXT + NUM opens the BT layer
 
 #include <behaviors.dtsi>
@@ -163,18 +163,18 @@
             layers = <EXT>;
         };
 
-        // MF moved off MOD/EXT + Space so that chord can repeat Backspace.
-        combo_mf_outer_thumbs {
+        // The mirrored inner layer thumbs open Media/Function together.
+        combo_mf_layer_thumbs {
             timeout-ms = <100>;
-            key-positions = <32 37>;
+            key-positions = <34 35>;
             bindings = <&mo MF>;
             layers = <BASE>;
         };
 
-        // MOD/EXT + the right outer NUM key is reserved for maintenance.
+        // MOD/EXT + the right inner NUM key is reserved for maintenance.
         combo_bt {
             timeout-ms = <100>;
-            key-positions = <33 37>;
+            key-positions = <33 35>;
             bindings = <&mo BT>;
             layers = <BASE>;
         };
@@ -190,7 +190,7 @@
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
                 &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &none
-                                             &esc_shift LSHFT ESC &ext_mod EXT MOD &sticky_layer SYM SYM &kp RET &kp SPACE &sticky_layer NUM NUM
+                                             &esc_shift LSHFT ESC &ext_mod EXT MOD &sticky_layer SYM SYM &sticky_layer NUM NUM &kp SPACE &kp RET
             >;
         };
 
