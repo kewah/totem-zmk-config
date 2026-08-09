@@ -7,7 +7,8 @@
 //   mirrored on MOD so tap-then-key one-shots the same shortcuts
 // - Thumb Shift: tap Escape, hold Shift
 // - Dedicated Enter and Space; sticky-tap/held SYM and NUM
-// - Delete and Backspace mirrored on MOD/EXT for one-shot or held repeat
+// - Backspace mirrored on MOD/EXT for one-shot or held repeat
+// - Delete stays on the EXT comma position
 // - Symbols prioritized for markup and writing
 // - Both outer thumbs open the shared media/function layer
 // - MOD/EXT + NUM opens the BT layer
@@ -202,7 +203,7 @@
                 &kp LG(LBKT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
                 &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
-                                             &trans      &trans          &trans         &kp DEL            &kp BSPC         &trans
+                                             &trans      &trans          &trans         &trans             &kp BSPC         &trans
             >;
         };
 
@@ -212,7 +213,7 @@
                 &kp LG(LBKT)  &tab_swapper &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &none
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
-                                             &trans       &trans          &trans         &kp DEL           &kp BSPC         &trans
+                                             &trans       &trans          &trans         &trans            &kp BSPC         &trans
             >;
         };
 
