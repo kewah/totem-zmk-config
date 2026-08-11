@@ -19,6 +19,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
   - tap `Sym` or `Num` for one sticky layer key; hold for a sequence
   - `Enter` and `Space` are dedicated, normally repeatable keys
   - hold `Esc/Shift` with the left thumb and tap `Enter` with the right thumb for Shift+Enter
+  - tap or hold `Mod/Ext`, then tap `Enter` for an alternate resting-thumb Shift+Enter chord
 - `Backspace` occupies the Space position on both `MOD` and `EXT`:
   - tap `Mod/Ext`, then tap Space for a one-shot edit
   - hold `Mod/Ext`, then hold Space for normal key repeat
@@ -95,7 +96,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `MOD`       |            |             | `BSP`        |             |
+|            | `MOD`       |            |             | `BSP`        | `SHIFT+RET` |
 
 ## EXT (hold `Mod/Ext`)
 
@@ -126,7 +127,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `EXT`       |            |             | `BSP`        |             |
+|            | `EXT`       |            |             | `BSP`        | `SHIFT+RET` |
 
 ## SYM (tap `Sym` for sticky; hold for momentary)
 
@@ -228,6 +229,7 @@ Right half
 - `BSP` on `MOD` and `EXT`:
   - tap `Mod/Ext`, then tap `Space` for one Backspace
   - hold `Mod/Ext`, then hold `Space` for repeating Backspace
+- `SHIFT+RET` on `MOD` and `EXT` provides Shift+Enter from the same layer trigger used for Backspace.
 - `DEL` is on the `EXT` comma position.
 - `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
   - tap = sticky modifier
