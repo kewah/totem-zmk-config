@@ -28,9 +28,10 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
   - hold both inner layer thumbs (`Sym` + `Num`) = `MF`
 - `BT` is a momentary thumb-chord layer:
   - hold `Mod/Ext` + `Num` = `BT`
-- `MOD` keys are hybrid modifiers:
+- `MOD`, `SYM`, and `NUM` home-row modifiers are hybrid modifiers:
   - tap = sticky mod
   - hold = normal held mod
+- Sticky `SYM` and `NUM` remain active while modifiers are entered, then release on the shortcut key. For example, tap `NUM`, tap `CTRL*` and `SHIFT*`, then tap `1` for Ctrl+Shift+1.
 - `TMX` on `MOD` sends the tmux prefix (`Ctrl+Space`)
 
 ### Thumb Placement Philosophy
@@ -134,7 +135,7 @@ Left half
 | Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
 | ------ | ------- | ----- | ------ | ----- | ----- |
 | Top    |         | `^`   | `&`    | `\|`  |       |
-| Home   | `SHIFT` | `ALT` | `CTRL` | `CMD` | `HYP` |
+| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `CMD*` | `HYP*` |
 | Bottom |         |       |        |       |       |
 
 Right half
@@ -173,7 +174,7 @@ Right half
 | Row    | Col 1 | Col 2 | Col 3  | Col 4 | Col 5   |
 | ------ | ----- | ----- | ------ | ----- | ------- |
 | Top    |       |       |        |       |         |
-| Home   | `HYP` | `CMD` | `CTRL` | `ALT` | `SHIFT` |
+| Home   | `HYP*` | `CMD*` | `CTRL*` | `ALT*` | `SHIFT*` |
 | Bottom |       |       |        |       |         |
 
 Thumbs (left hand)
@@ -231,6 +232,7 @@ Right half
 - `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
   - tap = sticky modifier
   - hold = normal held modifier
+- `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `SYM` and `NUM` use the same tap/hold behavior as `MOD`, so modifier muscle memory carries across all three layers.
 - `SHIFT†`, `ALT†`, `CTRL†`, `CMD†` on `EXT`:
   - sticky modifiers (tap to activate, auto-release after next keypress)
   - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)

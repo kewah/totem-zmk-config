@@ -107,14 +107,17 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // Layer-only thumbs converge on the same layer: sticky when tapped,
-        // momentary when held. Pass the target layer in both parameter cells.
+        // SYM/NUM activate immediately, stay sticky when tapped, and behave
+        // momentarily when a non-modifier is pressed while held. Modifier
+        // presses do not consume the sticky layer, allowing e.g. tap NUM,
+        // tap Ctrl+Shift, then tap 1.
         sticky_layer: sticky_or_held_layer {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <300>;
-            bindings = <&mo>, <&sl>;
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            bindings = <&mo>;
+            quick-release;
+            ignore-modifiers;
         };
     };
 
@@ -206,7 +209,7 @@
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
                 &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &none
-                                             &esc_shift LSHFT ESC &ext_mod EXT MOD &sticky_layer SYM SYM &sticky_layer NUM NUM &kp SPACE &kp RET
+                                             &esc_shift LSHFT ESC &ext_mod EXT MOD &sticky_layer SYM &sticky_layer NUM &kp SPACE &kp RET
             >;
         };
 
@@ -237,7 +240,7 @@
             label = "SYM";
             bindings = <
                 &none         &kp CARET    &kp AMPS     &kp PIPE     &none            &kp TILDE    &kp AT         &kp GRAVE      &kp HASH       &kp DLLR
-                &kp LSHFT     &kp LALT     &kp LCTRL    &kp LGUI     &kp HYPER_MOD    &kp MINUS    &kp LPAR       &kp LBRC       &kp LBKT       &kp SEMI
+                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &hm HYPER_MOD HYPER_MOD &kp MINUS &kp LPAR &kp LBRC &kp LBKT &kp SEMI
                 &none         &none        &none        &none        &none            &none        &kp UNDER      &kp RPAR       &kp RBRC       &kp RBKT      &kp COLON     &none
                                              &trans       &trans          &trans         &trans             &trans            &trans
             >;
@@ -247,7 +250,7 @@
             label = "NUM";
             bindings = <
                 &kp FSLH      &kp N7       &kp N8       &kp N9       &kp PRCNT        &none        &none          &none          &none          &none
-                &kp MINUS     &kp N1       &kp N2       &kp N3       &kp PLUS         &kp HYPER_MOD &kp LGUI      &kp LCTRL      &kp LALT       &kp LSHFT
+                &kp MINUS     &kp N1       &kp N2       &kp N3       &kp PLUS         &hm HYPER_MOD HYPER_MOD &hm LGUI LGUI &hm LCTRL LCTRL &hm LALT LALT &hm LSHFT LSHFT
                 &none         &kp X        &kp N4       &kp N5       &kp N6           &kp ASTRK    &none          &none          &none          &none        &none         &none
                                              &kp COLON    &kp N0         &kp EQUAL      &trans             &trans            &trans
             >;
