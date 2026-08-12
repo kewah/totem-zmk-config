@@ -168,7 +168,7 @@ Left half
 | ------ | ----- | ----- | ----- | ----- | ----- |
 | Top    | `/`   | `7`   | `8`   | `9`   | `%`   |
 | Home   | `-`   | `1`   | `2`   | `3`   | `+`   |
-| Bottom | `x`   | `4`   | `5`   | `6`   | `*`   |
+| Bottom | `:`   | `4`   | `5`   | `6`   | `*`   |
 
 Right half
 
@@ -182,7 +182,7 @@ Thumbs (left hand)
 
 | Left outer | Left middle | Left inner |
 | ---------- | ----------- | ---------- |
-| `:`        | `0`         | `=`        |
+| `.`        | `0`         | `=`        |
 
 The right inner thumb holds the `NUM` trigger, so right-hand thumb positions are omitted.
 
