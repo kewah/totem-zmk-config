@@ -240,8 +240,8 @@
             label = "SYM";
             bindings = <
                 &none         &kp CARET    &kp AMPS     &kp PIPE     &none            &kp TILDE    &kp AT         &kp GRAVE      &kp HASH       &kp DLLR
-                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &sk HYPER_MOD    &kp MINUS    &kp LPAR       &kp LBRC       &kp LBKT       &kp SEMI
-                &none         &none        &none        &none        &none            &none        &kp UNDER      &kp RPAR       &kp RBRC       &kp RBKT      &kp COLON     &none
+                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &sk HYPER_MOD    &kp MINUS    &kp LPAR       &kp LBRC       &kp LBKT       &kp COLON
+                &none         &none        &none        &none        &none            &none        &kp UNDER      &kp RPAR       &kp RBRC       &kp RBKT      &kp SEMI      &none
                                              &trans       &trans          &trans         &trans             &trans            &trans
             >;
         };
