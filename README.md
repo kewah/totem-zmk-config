@@ -113,7 +113,7 @@ Right half
 | Row    | Col 1  | Col 2  | Col 3 | Col 4   | Col 5  |
 | ------ | ------ | ------ | ----- | ------- | ------ |
 | Top    | `RALT` | `HOME` | `END` |         | `PGUP` |
-| Home   | `LEFT` | `DOWN` ① | `UP` ①② | `RIGHT` ② |        |
+| Home   | `LEFT` | `DOWN` ① | `UP` ①② | `RIGHT` ② | `TMX`  |
 | Bottom |        | `TAB`  | `DEL` |         | `PGDN` |
 
 Word-navigation chords (press the marked keys together):
@@ -248,7 +248,7 @@ Right half
 - `CMD+R` (reload) sits on the home row inner column (R's letter position holds `ALT†`/`ALT*`)
 - Left-hand `CMD` shortcuts exist on both layers: tap `Mod/Ext` for a one-shot (`MOD`), hold for repeats and `SWAP` cycling (`EXT`)
 - `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
-- `TMX` = tmux prefix (`Ctrl+Space`)
+- `TMX` = tmux prefix (`Ctrl+Space`), available on both `MOD` and `EXT`
 - `RALT` = Right Alt (used for VoiceInk speech-to-text)
 - `BT 0`-`BT 4` = directly select Bluetooth profile slots 0-4
 - `BT CLR` = clear Bluetooth bonds
