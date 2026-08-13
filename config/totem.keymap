@@ -173,19 +173,19 @@
             layers = <EXT>;
         };
 
-        // Keep the three Vim delimiter pairs on direct keys. Angle brackets
-        // use the same index-middle fingers: openings above, closings below.
-        combo_sym_lt {
+        // Keep parentheses, angle brackets, and square brackets on direct keys.
+        // Braces use the same index-middle fingers: openings above, closings below.
+        combo_sym_lbrc {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&kp LT>;
+            bindings = <&kp LBRC>;
             layers = <SYM>;
         };
 
-        combo_sym_gt {
+        combo_sym_rbrc {
             timeout-ms = <50>;
             key-positions = <27 28>;
-            bindings = <&kp GT>;
+            bindings = <&kp RBRC>;
             layers = <SYM>;
         };
 
@@ -247,8 +247,8 @@
             label = "SYM";
             bindings = <
                 &none         &kp CARET    &kp AMPS     &kp PIPE     &none            &kp TILDE    &kp AT         &kp GRAVE      &kp HASH       &kp DLLR
-                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &sk HYPER_MOD    &kp MINUS    &kp LPAR       &kp LBRC       &kp LBKT       &kp COLON
-                &none         &none        &none        &none        &none            &none        &kp UNDER      &kp RPAR       &kp RBRC       &kp RBKT      &kp SEMI      &none
+                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &sk HYPER_MOD    &kp MINUS    &kp LPAR       &kp LT         &kp LBKT       &kp COLON
+                &none         &none        &none        &none        &none            &none        &kp UNDER      &kp RPAR       &kp GT         &kp RBKT      &kp SEMI      &none
                                              &trans       &trans          &trans         &trans             &trans            &trans
             >;
         };
