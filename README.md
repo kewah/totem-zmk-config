@@ -9,20 +9,20 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 ## Layout Notes
 
 - Base layer uses Graphite.
-- The right isolated outer key is intentionally unused. The left isolated outer key holds `Mouseless` (`Hyper+Enter`) on `BASE` and `` CMD+` `` (cycle app windows) on `EXT`/`MOD`.
-- The layer diagrams omit isolated outer keys unless one is used on that layer.
+- The left isolated outer key holds `Esc/Shift`; the right isolated outer key holds `Mouseless` (`Hyper+Enter`) on `BASE`.
+- The left isolated outer key remains `` CMD+` `` (cycle app windows) on `EXT`/`MOD`.
+- The layer diagrams document the isolated outer keys separately from the five-column halves.
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
   - hold = `EXT`
 - The remaining thumb keys are organized by role:
-  - tap `Esc/Shift` for Escape; hold it for Shift
+  - tap the far-left `Esc/Shift` for Escape; hold it for Shift
   - tap `Sym` or `Num` for one sticky layer key; hold for a sequence
-  - `Enter` and `Space` are dedicated, normally repeatable keys
-  - hold `Esc/Shift` with the left thumb and tap `Enter` with the right thumb for Shift+Enter
+  - `Backspace`, `Enter`, and `Space` are dedicated, normally repeatable keys
+  - hold `Esc/Shift` and tap `Backspace` for Delete
+  - hold `Esc/Shift` and tap `Enter` for Shift+Enter
   - tap or hold `Mod/Ext`, then tap `Enter` for an alternate resting-thumb Shift+Enter chord
-- `Backspace` occupies the Space position on both `MOD` and `EXT`:
-  - tap `Mod/Ext`, then tap Space for a one-shot edit
-  - hold `Mod/Ext`, then hold Space for normal key repeat
+- `Backspace` and `Space` keep their base behavior on `MOD` and `EXT`.
 - `Delete` is available on the `EXT` comma position.
 - `EXT` left half is a one-handed mouse companion: app switching, tab cycling, window cycling, back/forward, close, select all, undo/cut/copy/paste while the right hand stays on the mouse.
 - `MF` is a momentary thumb-chord layer:
@@ -37,7 +37,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 
 ### Thumb Placement Philosophy
 
-`Mod/Ext` and `Space` occupy the middle resting positions. `Sym` and `Num` mirror each other on the inner thumbs, while `Esc/Shift` and `Enter` mirror each other on the outer thumbs for a simple two-thumb Shift+Enter chord. Enter and Space stay dedicated and repeatable, and the layer triggers consistently use sticky tap and momentary hold.
+`Mod/Ext` and `Space` occupy the middle resting positions, while `Sym` and `Num` mirror each other on the inner thumbs. Moving `Esc/Shift` to the far-left isolated key gives the left outer thumb to dedicated Backspace without disturbing Enter or the layer triggers. Backspace, Enter, and Space stay dedicated and repeatable.
 
 ## Layer Access
 
@@ -72,7 +72,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-| `ESC/SHIFT` | `MOD/EXT`  | `SYM†`     | `NUM†`      | `SPC`        | `RET`       |
+| `BSP/DEL`   | `MOD/EXT`  | `SYM†`     | `NUM†`      | `SPC`        | `RET`       |
 
 ## MOD (tap `Mod/Ext`)
 
@@ -96,7 +96,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `MOD`       |            |             | `BSP`        | `SHIFT+RET` |
+| `BSP/DEL`  | `MOD`       |            |             | `SPC`        | `SHIFT+RET` |
 
 ## EXT (hold `Mod/Ext`)
 
@@ -127,7 +127,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            | `EXT`       |            |             | `BSP`        | `SHIFT+RET` |
+| `BSP/DEL`  | `EXT`       |            |             | `SPC`        | `SHIFT+RET` |
 
 ## SYM (tap `Sym` for sticky; hold for momentary)
 
@@ -158,7 +158,7 @@ Thumbs
 
 | Left outer | Left middle | Left inner | Right inner | Right middle | Right outer |
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
-|            |             | `SYM`      | `NUM†`      | `SPC`        | `RET`       |
+| `BSP/DEL`  |             | `SYM`      | `NUM†`      | `SPC`        | `RET`       |
 
 ## NUM (tap `Num` for sticky; hold for momentary)
 
@@ -226,10 +226,8 @@ Right half
 
 - `X/Y` = tap `X`, hold `Y`
 - `SYM†`, `NUM†` = tap for a sticky one-key layer, hold for a momentary layer
-- `BSP` on `MOD` and `EXT`:
-  - tap `Mod/Ext`, then tap `Space` for one Backspace
-  - hold `Mod/Ext`, then hold `Space` for repeating Backspace
-- `SHIFT+RET` on `MOD` and `EXT` provides Shift+Enter from the same layer trigger used for Backspace.
+- `BSP/DEL` sends Backspace normally and Delete while either Shift is active.
+- `SHIFT+RET` on `MOD` and `EXT` provides the alternate resting-thumb Shift+Enter chord.
 - `DEL` is on the `EXT` comma position.
 - `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
   - tap = sticky modifier
@@ -254,7 +252,7 @@ Right half
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
 - `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
-- The right isolated outer key is unused; the left holds `Mouseless` (`BASE`) and `` CMD+` `` (`EXT`/`MOD`)
+- The isolated outer keys hold `Esc/Shift` on the left and `Mouseless` on the right on `BASE`; the left becomes `` CMD+` `` on `EXT`/`MOD`.
 
 ## Bluetooth Recovery
 

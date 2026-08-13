@@ -5,9 +5,9 @@
 // - Hold EXT for navigation/editing, tap EXT for sticky MOD
 // - EXT left hand: one-handed mouse companion (swapper, history, clipboard),
 //   mirrored on MOD so tap-then-key one-shots the same shortcuts
-// - Thumb Shift: tap Escape, hold Shift
-// - Dedicated Enter and Space; sticky-tap/held SYM and NUM
-// - Backspace mirrored on MOD/EXT for one-shot or held repeat
+// - Far-left Shift: tap Escape, hold Shift
+// - Dedicated Backspace, Enter, and Space; sticky-tap/held SYM and NUM
+// - Shift + Backspace sends Delete
 // - Delete stays on the EXT comma position
 // - Symbols prioritized for markup and writing
 // - SYM + NUM opens the shared media/function layer
@@ -55,6 +55,13 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp BSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        backspace_delete: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -208,8 +215,8 @@
             bindings = <
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
-                &mouseless   &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &none
-                                             &esc_shift LSHFT ESC &ext_mod EXT MOD &sticky_layer SYM &sticky_layer NUM &kp SPACE &kp RET
+                &esc_shift LSHFT ESC &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &mouseless
+                                             &backspace_delete &ext_mod EXT MOD &sticky_layer SYM &sticky_layer NUM &kp SPACE &kp RET
             >;
         };
 
@@ -222,7 +229,7 @@
                 &kp LG(LBKT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
                 &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
-                                             &trans      &trans          &trans         &trans             &kp BSPC         &kp LS(RET)
+                                             &trans      &trans          &trans         &trans             &trans           &kp LS(RET)
             >;
         };
 
@@ -232,7 +239,7 @@
                 &kp LG(LBKT)  &tab_swapper &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &tmx
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
-                                             &trans       &trans          &trans         &trans            &kp BSPC         &kp LS(RET)
+                                             &trans       &trans          &trans         &trans            &trans           &kp LS(RET)
             >;
         };
 
