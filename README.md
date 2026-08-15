@@ -10,7 +10,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 
 - Base layer uses Graphite.
 - The left isolated outer key holds `Esc/Shift`; the right isolated outer key holds `Mouseless` (`Hyper+Enter`) on `BASE`.
-- The left isolated outer key remains `` CMD+` `` (cycle app windows) on `EXT`/`MOD`.
+- The left isolated outer key is `ESC` on `MOD` so sticky modifiers can form chords such as Cmd+Esc; it is `` CMD+` `` (cycle app windows) on `EXT`.
 - The layer diagrams document the isolated outer keys separately from the five-column halves.
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
@@ -76,6 +76,8 @@ Thumbs
 
 ## MOD (tap `Mod/Ext`)
 
+Isolated outer keys: left `ESC`, right blank.
+
 Left half
 
 | Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
@@ -99,6 +101,8 @@ Thumbs
 |            | `MOD`       | `BSP/DEL`  | `SHIFT+RET` | `SPC`        |             |
 
 ## EXT (hold `Mod/Ext`)
+
+Isolated outer keys: left `` CMD+` ``, right blank.
 
 Left half
 
@@ -252,7 +256,7 @@ Right half
 - `BT CLR` = clear Bluetooth bonds
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
 - `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
-- The isolated outer keys hold `Esc/Shift` on the left and `Mouseless` on the right on `BASE`; the left becomes `` CMD+` `` on `EXT`/`MOD`.
+- The isolated outer keys hold `Esc/Shift` on the left and `Mouseless` on the right on `BASE`; the left becomes `ESC` on `MOD` and `` CMD+` `` on `EXT`.
 
 ## Bluetooth Recovery
 

@@ -228,7 +228,7 @@
             bindings = <
                 &kp LG(LBKT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
                 &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
-                &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
+                &kp ESC       &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
                                              &trans      &trans          &trans         &kp LS(RET)        &trans           &trans
             >;
         };
