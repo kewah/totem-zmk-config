@@ -189,18 +189,18 @@
             layers = <SYM>;
         };
 
-        // The mirrored inner layer thumbs open Media/Function together.
+        // The mirrored outer layer thumbs open Media/Function together.
         combo_mf_layer_thumbs {
             timeout-ms = <100>;
-            key-positions = <34 35>;
+            key-positions = <32 37>;
             bindings = <&mo MF>;
             layers = <BASE>;
         };
 
-        // MOD/EXT + the right inner NUM key is reserved for maintenance.
+        // MOD/EXT + the right outer NUM key is reserved for maintenance.
         combo_bt {
             timeout-ms = <100>;
-            key-positions = <33 35>;
+            key-positions = <33 37>;
             bindings = <&mo BT>;
             layers = <BASE>;
         };
@@ -216,7 +216,7 @@
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
                 &esc_shift LSHFT ESC &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &mouseless
-                                             &backspace_delete &ext_mod EXT MOD &sticky_layer SYM &sticky_layer NUM &kp SPACE &kp RET
+                                             &sticky_layer SYM &ext_mod EXT MOD &backspace_delete &kp RET &kp SPACE &sticky_layer NUM
             >;
         };
 
@@ -229,7 +229,7 @@
                 &kp LG(LBKT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
                 &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
-                                             &trans      &trans          &trans         &trans             &trans           &kp LS(RET)
+                                             &trans      &trans          &trans         &kp LS(RET)        &trans           &trans
             >;
         };
 
@@ -239,7 +239,7 @@
                 &kp LG(LBKT)  &tab_swapper &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
                 &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &tmx
                 &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
-                                             &trans       &trans          &trans         &trans            &trans           &kp LS(RET)
+                                             &trans       &trans          &trans         &kp LS(RET)       &trans           &trans
             >;
         };
 
