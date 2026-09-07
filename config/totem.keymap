@@ -26,8 +26,6 @@
 #define MF   5
 #define BT   6
 
-#define HYPER_MOD LG(LS(LA(LCTRL)))
-
 / {
     behaviors {
         apo_dquote: apostrophe_doublequote {
@@ -85,13 +83,13 @@
             retro-tap;
         };
 
-        // Cmd-Tab app switcher: holds Cmd across taps, released on
+        // Alt-Tab window switcher: holds Alt across taps, released on
         // interrupt (any other key or leaving EXT). Sticky Shift (pos 10)
-        // is ignored so it can reverse-cycle without dropping Cmd.
+        // is ignored so it can reverse-cycle without dropping Alt.
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
             ignored-key-positions = <10>;
         };
 
@@ -129,22 +127,14 @@
     };
 
     macros {
-        mouseless: mouseless {
+        // Instant switch to the previous window: Alt is released right away so
+        // the window switcher UI never stays open (unlike the tri-state swapper).
+        quick_swap: quick_window_swap {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>,
-                       <&macro_tap &kp RET>,
-                       <&macro_release &kp LCTRL &kp LALT &kp LGUI &kp LSHFT>;
-        };
-
-        // Instant switch to previous app: Cmd released right away so
-        // the macOS switcher UI never shows (unlike &kp LG(TAB)).
-        quick_swap: quick_app_swap {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LGUI>,
+            bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp TAB>,
-                       <&macro_release &kp LGUI>;
+                       <&macro_release &kp LALT>;
         };
 
         tmx: tmux_prefix {
@@ -162,14 +152,14 @@
         combo_word_left {
             timeout-ms = <50>;
             key-positions = <16 17>;
-            bindings = <&kp LA(LEFT)>;
+            bindings = <&kp LC(LEFT)>;
             layers = <EXT>;
         };
 
         combo_word_right {
             timeout-ms = <50>;
             key-positions = <17 18>;
-            bindings = <&kp LA(RIGHT)>;
+            bindings = <&kp LC(RIGHT)>;
             layers = <EXT>;
         };
 
@@ -215,20 +205,20 @@
             bindings = <
                 &kp B        &kp L        &kp D        &kp W        &kp Z            &apo_dquote  &kp F          &kp O          &kp U          &kp J
                 &kp N        &kp R        &kp T        &kp S        &kp G            &kp Y        &kp H          &kp A          &kp E          &kp I
-                &esc_shift LSHFT ESC &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &mouseless
+                &esc_shift LSHFT ESC &kp Q        &kp X        &kp M        &kp C            &kp V        &kp K          &kp P          &comma_qmark   &dot_excl     &slash_bslash &kp LG(SPACE)
                                              &sticky_layer SYM &ext_mod EXT MOD &backspace_delete &kp RET &kp SPACE &sticky_layer NUM
             >;
         };
 
-        // Left-hand Cmd shortcuts mirror EXT at the same positions so
+        // Left-hand editing shortcuts mirror EXT at the same positions so
         // tap-then-key one-shots them. SWAP's position gets quick_swap
         // instead: the tri-state can't cycle from a sticky layer.
         mod_layer {
             label = "MOD";
             bindings = <
-                &kp LG(LBKT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LG(Z)        &trans       &trans         &trans         &trans         &trans
-                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LG(R) &trans &hm HYPER_MOD HYPER_MOD &trans       &trans         &tmx
-                &kp ESC       &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
+                &kp LA(LEFT)  &kp LC(TAB)  &quick_swap  &kp LG(W)    &kp LC(Z)        &trans       &trans         &trans         &trans         &trans
+                &hm LSHFT LSHFT &hm LALT LALT &hm LCTRL LCTRL &hm LGUI LGUI &kp LC(R) &trans &trans         &trans       &trans         &tmx
+                &kp ESC       &kp LA(RIGHT) &kp LG(X)    &kp LC(A)    &kp LG(C)        &kp LG(V)    &trans         &trans         &trans         &trans       &trans        &trans
                                              &trans      &trans          &trans         &kp LS(RET)        &trans           &trans
             >;
         };
@@ -236,9 +226,9 @@
         ext_layer {
             label = "EXT";
             bindings = <
-                &kp LG(LBKT)  &tab_swapper &swapper     &kp LG(W)    &kp LG(Z)        &kp RALT     &kp HOME       &kp END        &none          &kp PG_UP
-                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LG(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &tmx
-                &kp LG(GRAVE) &kp LG(RBKT) &kp LG(X)    &kp LG(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
+                &kp LA(LEFT)  &tab_swapper &swapper     &kp LG(W)    &kp LC(Z)        &kp F9       &kp HOME       &kp END        &none          &kp PG_UP
+                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &kp LC(R)        &kp LEFT     &kp DOWN       &kp UP         &kp RIGHT      &tmx
+                &kp LA(LS(TAB)) &kp LA(RIGHT) &kp LG(X)  &kp LC(A)    &kp LG(C)        &kp LG(V)    &none          &kp TAB        &kp DEL        &none         &kp PG_DN     &none
                                              &trans       &trans          &trans         &kp LS(RET)       &trans           &trans
             >;
         };
@@ -247,7 +237,7 @@
             label = "SYM";
             bindings = <
                 &none         &kp CARET    &kp AMPS     &kp PIPE     &none            &kp TILDE    &kp AT         &kp GRAVE      &kp HASH       &kp DLLR
-                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &sk HYPER_MOD    &kp MINUS    &kp LPAR       &kp LT         &kp LBKT       &kp COLON
+                &sk LSHFT     &sk LALT     &sk LCTRL    &sk LGUI     &none            &kp MINUS    &kp LPAR       &kp LT         &kp LBKT       &kp COLON
                 &none         &none        &none        &none        &none            &none        &kp UNDER      &kp RPAR       &kp GT         &kp RBKT      &kp SEMI      &none
                                              &trans       &trans          &trans         &trans             &trans            &trans
             >;
@@ -257,7 +247,7 @@
             label = "NUM";
             bindings = <
                 &kp FSLH      &kp N7       &kp N8       &kp N9       &kp PRCNT        &none        &none          &none          &none          &none
-                &kp MINUS     &kp N1       &kp N2       &kp N3       &kp PLUS         &sk HYPER_MOD &sk LGUI      &sk LCTRL     &sk LALT      &sk LSHFT
+                &kp MINUS     &kp N1       &kp N2       &kp N3       &kp PLUS         &none         &sk LGUI      &sk LCTRL     &sk LALT      &sk LSHFT
                 &none         &kp COLON    &kp N4       &kp N5       &kp N6           &kp ASTRK    &none          &none          &none          &none        &none         &none
                                              &kp DOT      &kp N0         &kp EQUAL      &trans             &trans            &trans
             >;
@@ -276,7 +266,7 @@
         bt_layer {
             label = "BT";
             bindings = <
-                &bt BT_CLR    &out OUT_USB  &out OUT_BLE &none        &none           &none         &none          &none          &none          &none
+                &bt BT_CLR_ALL &out OUT_USB  &out OUT_BLE &none        &none           &none         &none          &none          &none          &none
                 &bt BT_PRV    &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_NXT      &none         &none          &none          &none          &none
                 &none         &none         &bt BT_SEL 3 &bt BT_SEL 4 &none           &none         &none          &none          &none          &none        &none         &none
                                              &none        &none         &none          &none               &none             &none

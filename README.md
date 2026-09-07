@@ -9,8 +9,8 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
 ## Layout Notes
 
 - Base layer uses Graphite.
-- The left isolated outer key holds `Esc/Shift`; the right isolated outer key holds `Mouseless` (`Hyper+Enter`) on `BASE`.
-- The left isolated outer key is `ESC` on `MOD` so sticky modifiers can form chords such as Cmd+Esc; it is `` CMD+` `` (cycle app windows) on `EXT`.
+- The left isolated outer key holds `Esc/Shift`; the right isolated outer key opens the Omarchy menu (`Super+Space`) on `BASE`.
+- The left isolated outer key is `ESC` on `MOD`; it switches to the previous window (`Alt+Shift+Tab`) on `EXT`.
 - The layer diagrams document the isolated outer keys separately from the five-column halves.
 - `Mod/Ext` is the main layer key:
   - tap = sticky `MOD`
@@ -24,7 +24,7 @@ Inspired by [Selenium](https://onedeadkey.github.io/selenium/), [Seniply](https:
   - tap or hold `Mod/Ext`, then tap `Enter` for an alternate resting-thumb Shift+Enter chord
 - `Backspace` and `Space` keep their base behavior on `MOD` and `EXT`.
 - `Delete` is available on the `EXT` comma position.
-- `EXT` left half is a one-handed mouse companion: app switching, tab cycling, window cycling, back/forward, close, select all, undo/cut/copy/paste while the right hand stays on the mouse.
+- `EXT` left half is a one-handed mouse companion: window switching, tab cycling, browser back/forward, close, select all, undo/cut/copy/paste while the right hand stays on the mouse.
 - `MF` is a momentary thumb-chord layer:
   - hold both outer layer thumbs (`Sym` + `Num`) = `MF`
 - `BT` is a momentary thumb-chord layer:
@@ -74,24 +74,26 @@ Thumbs
 | ---------- | ----------- | ---------- | ----------- | ------------ | ----------- |
 | `SYM†`      | `MOD/EXT`  | `BSP/DEL`  | `RET`       | `SPC`        | `NUM†`      |
 
+Isolated outer keys: left `Esc/Shift`, right `Omarchy menu` (`Super+Space`).
+
 ## MOD (tap `Mod/Ext`)
 
 Isolated outer keys: left `ESC`, right blank.
 
 Left half
 
-| Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
-| ------ | -------- | --------- | ------- | ------- | ------- |
-| Top    | `CMD+[`  | `CTRL+TAB` | `QSWAP` | `CMD+W` | `CMD+Z` |
-| Home   | `SHIFT*` | `ALT*`    | `CTRL*` | `CMD*`  | `CMD+R` |
-| Bottom | `CMD+]`  | `CMD+X`   | `CMD+A` | `CMD+C` | `CMD+V` |
+| Row    | Col 1      | Col 2      | Col 3   | Col 4    | Col 5   |
+| ------ | ---------- | ---------- | ------- | -------- | ------- |
+| Top    | `ALT+LEFT` | `CTRL+TAB` | `QSWAP` | `SUPER+W` | `CTRL+Z` |
+| Home   | `SHIFT*`   | `ALT*`     | `CTRL*` | `SUPER*` | `CTRL+R` |
+| Bottom | `ALT+RIGHT` | `SUPER+X` | `CTRL+A` | `SUPER+C` | `SUPER+V` |
 
 Right half
 
 | Row    | Col 1 | Col 2  | Col 3 | Col 4 | Col 5 |
 | ------ | ----- | ------ | ----- | ----- | ----- |
 | Top    |       |        |       |       |       |
-| Home   |       | `HYP*` |       |       | `TMX` |
+| Home   |       |        |       |       | `TMX` |
 | Bottom |       |        |       |       |       |
 
 Thumbs
@@ -102,21 +104,21 @@ Thumbs
 
 ## EXT (hold `Mod/Ext`)
 
-Isolated outer keys: left `` CMD+` ``, right blank.
+Isolated outer keys: left `ALT+SHIFT+TAB`, right blank.
 
 Left half
 
-| Row    | Col 1    | Col 2     | Col 3   | Col 4   | Col 5   |
-| ------ | -------- | --------- | ------- | ------- | ------- |
-| Top    | `CMD+[`  | `TSWAP`    | `SWAP`  | `CMD+W` | `CMD+Z` |
-| Home   | `SHIFT†` | `ALT†`    | `CTRL†` | `CMD†`  | `CMD+R` |
-| Bottom | `CMD+]`  | `CMD+X`   | `CMD+A` | `CMD+C` | `CMD+V` |
+| Row    | Col 1       | Col 2  | Col 3 | Col 4     | Col 5    |
+| ------ | ----------- | ------ | ----- | --------- | -------- |
+| Top    | `ALT+LEFT`  | `TSWAP` | `SWAP` | `SUPER+W` | `CTRL+Z` |
+| Home   | `SHIFT†`    | `ALT†` | `CTRL†` | `SUPER†` | `CTRL+R` |
+| Bottom | `ALT+RIGHT` | `SUPER+X` | `CTRL+A` | `SUPER+C` | `SUPER+V` |
 
 Right half
 
 | Row    | Col 1  | Col 2  | Col 3 | Col 4   | Col 5  |
 | ------ | ------ | ------ | ----- | ------- | ------ |
-| Top    | `RALT` | `HOME` | `END` |         | `PGUP` |
+| Top    | `F9 PTT` | `HOME` | `END` |         | `PGUP` |
 | Home   | `LEFT` | `DOWN` ① | `UP` ①② | `RIGHT` ② | `TMX`  |
 | Bottom |        | `TAB`  | `DEL` |         | `PGDN` |
 
@@ -124,8 +126,8 @@ Word-navigation chords (press the marked keys together):
 
 | Chord | Base positions | Output |
 | ----- | -------------- | ------ |
-| ① `DOWN` + `UP` | `H` + `A` | Opt+Left |
-| ② `UP` + `RIGHT` | `A` + `E` | Opt+Right |
+| ① `DOWN` + `UP` | `H` + `A` | Ctrl+Left |
+| ② `UP` + `RIGHT` | `A` + `E` | Ctrl+Right |
 
 Thumbs
 
@@ -140,7 +142,7 @@ Left half
 | Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
 | ------ | ------- | ----- | ------ | ----- | ----- |
 | Top    |         | `^`   | `&`    | `\|`  |       |
-| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `CMD*` | `HYP*` |
+| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `SUPER*` |       |
 | Bottom |         |       |        |       |       |
 
 Right half
@@ -179,7 +181,7 @@ Right half
 | Row    | Col 1 | Col 2 | Col 3  | Col 4 | Col 5   |
 | ------ | ----- | ----- | ------ | ----- | ------- |
 | Top    |       |       |        |       |         |
-| Home   | `HYP*` | `CMD*` | `CTRL*` | `ALT*` | `SHIFT*` |
+| Home   |        | `SUPER*` | `CTRL*` | `ALT*` | `SHIFT*` |
 | Bottom |       |       |        |       |         |
 
 Thumbs (left hand)
@@ -214,7 +216,7 @@ Left half
 
 | Row    | Col 1    | Col 2      | Col 3      | Col 4   | Col 5    |
 | ------ | -------- | ---------- | ---------- | ------- | -------- |
-| Top    | `BT CLR` | `OUT USB`  | `OUT BLE`  |         |          |
+| Top    | `BT CLR ALL` | `OUT USB`  | `OUT BLE`  |         |          |
 | Home   | `BT PRV` | `BT 0`     | `BT 1`     | `BT 2`  | `BT NXT` |
 | Bottom |          | `BT 3`     | `BT 4`     |         |          |
 
@@ -233,38 +235,37 @@ Right half
 - `BSP/DEL` sends Backspace normally and Delete while either Shift is active.
 - `SHIFT+RET` on `MOD` and `EXT` provides the alternate resting-thumb Shift+Enter chord.
 - `DEL` is on the `EXT` comma position.
-- `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `MOD`:
+- `SHIFT*`, `ALT*`, `CTRL*`, and `SUPER*` on `MOD`:
   - tap = sticky modifier
   - hold = normal held modifier
-- `SHIFT*`, `ALT*`, `CTRL*`, `CMD*`, `HYP*` on `SYM` and `NUM` use the same tap/hold behavior as `MOD`, so modifier muscle memory carries across all three layers.
-- `SHIFT†`, `ALT†`, `CTRL†`, `CMD†` on `EXT`:
+- `SHIFT*`, `ALT*`, `CTRL*`, and `SUPER*` on `SYM` and `NUM` use the same tap/hold behavior as `MOD`. On the right-hand `NUM` layer they are mirrored as `SUPER`, `CTRL`, `ALT`, `SHIFT` from the inner usable column outward.
+- `SHIFT†`, `ALT†`, `CTRL†`, `SUPER†` on `EXT`:
   - sticky modifiers (tap to activate, auto-release after next keypress)
-  - stackable: tap multiple to combine (e.g., `CMD†` then `SHIFT†` then `F` = Cmd+Shift+F)
-- `SWAP` = Cmd+Tab app switcher (tri-state): tap to open the macOS switcher and advance, Cmd stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
-- `QSWAP` = instant switch to previous app (Cmd+Tab with immediate release, no switcher UI), same key as `SWAP`
-- `TSWAP` = Ctrl+Tab tab switcher (tri-state): holds Ctrl across taps so the browser tab switcher stays up, tap `SHIFT†` to reverse (Ctrl+Shift+Tab), release `Mod/Ext` to commit. Sits beside `SWAP` (tab switching next to app switching)
+  - stackable: tap multiple to combine (e.g., `SUPER†` then `SHIFT†` then `F` = Super+Shift+F)
+- `SWAP` = Alt+Tab window switcher (tri-state): tap to advance, Alt stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
+- `QSWAP` = instant switch to the previous window (Alt+Tab with immediate release), same key as `SWAP`
+- `TSWAP` = Ctrl+Tab tab switcher (tri-state): holds Ctrl across taps so the browser tab switcher stays up, tap `SHIFT†` to reverse (Ctrl+Shift+Tab), release `Mod/Ext` to commit. Sits beside `SWAP` (tab switching next to window switching)
 - `CTRL+TAB` on `MOD` = plain one-shot Ctrl+Tab, same key position as `TSWAP`
-- `CMD+[` / `CMD+]` = back / forward, same-column open/close pattern as `SYM` brackets
-- `CMD+Z/X/C/V/W` sit on their Graphite letter positions as mnemonics
-- `CMD+A` (select all) sits left of `CMD+C` to cluster select/copy/paste for one-handed use, not on its letter position
-- `CMD+R` (reload) sits on the home row inner column (R's letter position holds `ALT†`/`ALT*`)
-- Left-hand `CMD` shortcuts exist on both layers: tap `Mod/Ext` for a one-shot (`MOD`), hold for repeats and `SWAP` cycling (`EXT`)
-- `HYP` = Hyper (`Ctrl+Alt+Cmd+Shift`)
+- `ALT+LEFT` / `ALT+RIGHT` = browser/file-manager back and forward
+- `CTRL+Z/A/R` use standard Linux application shortcuts for undo, select all, and reload
+- `SUPER+X/C/V` use Omarchy's universal clipboard shortcuts, including terminal-safe behavior
+- `SUPER+W` closes the active Hyprland window
+- Left-hand editing shortcuts exist on both layers: tap `Mod/Ext` for a one-shot (`MOD`), or hold it for repeats and `SWAP` cycling (`EXT`)
 - `TMX` = tmux prefix (`Ctrl+Space`), available on both `MOD` and `EXT`
-- `RALT` = Right Alt (used for VoiceInk speech-to-text)
+- `F9 PTT` = hold-to-talk Voxtype dictation through the Omarchy F9 press/release bindings
 - `BT 0`-`BT 4` = directly select Bluetooth profile slots 0-4
-- `BT CLR` = clear Bluetooth bonds
+- `BT CLR ALL` = clear Bluetooth bonds from all five profiles
 - `BT NXT` / `BT PRV` = switch Bluetooth profile
 - `OUT USB` / `OUT BLE` = explicitly select USB or Bluetooth output
-- The isolated outer keys hold `Esc/Shift` on the left and `Mouseless` on the right on `BASE`; the left becomes `ESC` on `MOD` and `` CMD+` `` on `EXT`.
+- The isolated outer keys hold `Esc/Shift` on the left and the Omarchy menu on the right on `BASE`; the left becomes `ESC` on `MOD` and previous-window on `EXT`.
 
 ## Bluetooth Recovery
 
 If Bluetooth stops working after a firmware change:
 
-1. Forget the keyboard in macOS Bluetooth settings.
+1. Remove the keyboard from Omarchy's Bluetooth settings.
 2. Hold `Mod/Ext` + `Num` to reach `BT`.
-3. Press `BT CLR`.
+3. Press `BT CLR ALL`.
 4. Use `BT 0`-`BT 4` to jump directly to the host profile you want, or `BT NXT` / `BT PRV` to cycle.
 5. If the board is on the wrong output, press `OUT BLE` or `OUT USB`.
 6. If that still does not recover it, flash the `settings_reset` UF2 to both halves, then re-flash the normal left/right firmware.
@@ -273,7 +274,7 @@ If Bluetooth stops working after a firmware change:
 
 | Layer | Keys      | Output                 |
 | ----- | --------- | ---------------------- |
-| EXT   | `H` + `A` | Opt+Left (word left)   |
-| EXT   | `A` + `E` | Opt+Right (word right) |
+| EXT   | `H` + `A` | Ctrl+Left (word left)   |
+| EXT   | `A` + `E` | Ctrl+Right (word right) |
 | SYM   | `(` + `<` | `{`                    |
 | SYM   | `)` + `>` | `}`                    |
