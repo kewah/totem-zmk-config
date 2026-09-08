@@ -93,7 +93,7 @@ Right half
 | Row    | Col 1 | Col 2  | Col 3 | Col 4 | Col 5 |
 | ------ | ----- | ------ | ----- | ----- | ----- |
 | Top    |       |        |       |       |       |
-| Home   |       |        |       |       | `TMX` |
+| Home   |       | `SUPER*` |       |       | `TMX` |
 | Bottom |       |        |       |       |       |
 
 Thumbs
@@ -142,7 +142,7 @@ Left half
 | Row    | Col 1   | Col 2 | Col 3  | Col 4 | Col 5 |
 | ------ | ------- | ----- | ------ | ----- | ----- |
 | Top    |         | `^`   | `&`    | `\|`  |       |
-| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `SUPER*` |       |
+| Home   | `SHIFT*` | `ALT*` | `CTRL*` | `SUPER*` | `SUPER*` |
 | Bottom |         |       |        |       |       |
 
 Right half
@@ -181,7 +181,7 @@ Right half
 | Row    | Col 1 | Col 2 | Col 3  | Col 4 | Col 5   |
 | ------ | ----- | ----- | ------ | ----- | ------- |
 | Top    |       |       |        |       |         |
-| Home   |        | `SUPER*` | `CTRL*` | `ALT*` | `SHIFT*` |
+| Home   | `SUPER*` | `SUPER*` | `CTRL*` | `ALT*` | `SHIFT*` |
 | Bottom |       |       |        |       |         |
 
 Thumbs (left hand)
@@ -235,13 +235,14 @@ Right half
 - `BSP/DEL` sends Backspace normally and Delete while either Shift is active.
 - `SHIFT+RET` on `MOD` and `EXT` provides the alternate resting-thumb Shift+Enter chord.
 - `DEL` is on the `EXT` comma position.
-- `SHIFT*`, `ALT*`, `CTRL*`, and `SUPER*` on `MOD`:
+- `SHIFT*`, `ALT*`, and `CTRL*` on `MOD`, with `SUPER*` available on both `S` (the old Command home) and right-hand `H` (the old Hyper home):
   - tap = sticky modifier
   - hold = normal held modifier
-- `SHIFT*`, `ALT*`, `CTRL*`, and `SUPER*` on `SYM` and `NUM` use the same tap/hold behavior as `MOD`. On the right-hand `NUM` layer they are mirrored as `SUPER`, `CTRL`, `ALT`, `SHIFT` from the inner usable column outward.
-- `SHIFT†`, `ALT†`, `CTRL†`, `SUPER†` on `EXT`:
+- `SHIFT*`, `ALT*`, `CTRL*`, and `SUPER*` on `SYM` and `NUM` use the same tap/hold behavior as `MOD`. `SUPER*` remains on the old Command keys (`S` on `SYM`, `H` on `NUM`) and is duplicated on the old Hyper keys (`G` on `SYM`, innermost `Y` on `NUM`). On `NUM`, `CTRL`, `ALT`, and `SHIFT` stay mirrored from the `A` column outward.
+- `SHIFT†`, `ALT†`, `CTRL†`, and `SUPER†` on `EXT`:
   - sticky modifiers (tap to activate, auto-release after next keypress)
   - stackable: tap multiple to combine (e.g., `SUPER†` then `SHIFT†` then `F` = Super+Shift+F)
+  - `SUPER†` remains on `S`; the `H` position stays `DOWN` for navigation
 - `SWAP` = Alt+Tab window switcher (tri-state): tap to advance, Alt stays held across taps, tap `SHIFT†` to cycle backward, release `Mod/Ext` (or press any other key) to commit
 - `QSWAP` = instant switch to the previous window (Alt+Tab with immediate release), same key as `SWAP`
 - `TSWAP` = Ctrl+Tab tab switcher (tri-state): holds Ctrl across taps so the browser tab switcher stays up, tap `SHIFT†` to reverse (Ctrl+Shift+Tab), release `Mod/Ext` to commit. Sits beside `SWAP` (tab switching next to window switching)
